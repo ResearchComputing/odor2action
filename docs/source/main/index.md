@@ -1,6 +1,5 @@
-# <span style="color:green">INTRODUCTION</span>
 
-## Overview
+## <span style="color:green">OVERVIEW</span>
 
 The aim of this documentation is to provide a step-by-step guide for users of Odor2Action (O2A) data and centralized computing resources. The data storage and computing resources are hosted by CU Research Computing (CURC). This documentation should help you get started with most tasks, however you can refer to the [main CURC documentation page](https://curc.readthedocs.io) for additonal information.
 
@@ -23,33 +22,6 @@ __Gateways__: The computing and storage resources can be accessed through the fo
 4. Via <a href="https://www.globus.org" target="_blank">Globus</a> (transfer files to/from PetaLibrary or other CURC filesystems)
 
 _See the [Quick Start Guide](#span-style-color-green-quick-start-guide-span) to access CURC resources via gateways._
-
-## Definitions
-
-### <a href="https://oit.colorado.edu/services/identity-access-management/identikey" target="_blank">IdentiKey</a>
-_An IdentiKey consists of a CU Boulder username and an IdentiKey password. An IdentiKey is the credential that uniquely identifies you to online services and campus computing facilities so that they may grant you access._
-
-### <a href="https://www.colorado.edu/rc/resources/summit" target="_blank">RMACC Summit</a>
-_An NSF-funded supercomputer operated by CURC and freely available to CU users and affiliates._
-
-### <a href="https://www.colorado.edu/rc/resources/blanca" target="_blank">Blanca</a>
-_The CURC condo computing service "Blanca" offers researchers the opportunity to purchase and own compute nodes that will be operated as part of a shared cluster. The aggregate cluster is made available to all condo partners while maintaining priority for the owner of each node. Odor2Action owns a Blanca node for use by O2A affiliates._
-
-### <a href="https://www.colorado.edu/rc/resources/petalibrary" target="_blank">PetaLibrary</a>
-_A CURC service that enables the storage, archival, and sharing of research data. It is available at a subsidized cost to any researcher affiliated with the University of Colorado Boulder. The Odor2Action project owns a PetaLibrary allocation for use by O2A affiliates._
-
-### <a href="https://www.globus.org" target="_blank">Globus</a>
-_A web-based service that enables quick and intuitive data transfer and sharing between endpoints._
-
-### <a href="https://docs.globus.org/faq/globus-connect-endpoints/#what_is_an_endpoint" target="_blank">Endpoint</a>
-_An "endpoint" is a Globus term referring to one of the two file transfer locations – either the source or the destination – between which files can move. Once a resource (server, cluster, storage system, laptop, or other system) is defined as an endpoint, it will be available to authorized users who can transfer files to or from this endpoint._
-
-### <a href="https://www.colorado.edu/rc/resources/enginframe" target="_blank">EnginFrame cluster</a>
-
-_The CURC EnginFrame cluster provides a 3d-accelerated remote desktop environment on an Nvidia GPU-equipped compute node hosted by CURC. Coupled with the proprietary Desktop Cloud Visualization (DCV) VNC server, the CURC EnginFrame supports the use of common visualization applications in a typical desktop environment (e.g. Matlab, Rstudio) using only a web browser._
-
-### <a href="https://www.colorado.edu/rc/resources/jupyterhub" target="_blank">JupyterHub</a>
-_JupyterHub is a multi-user server for Jupyter (formerly known as IPython) notebooks. It provides a web service that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. CURC hosts a JupyterHub environment that enables researchers to utilize CURC-hosted storage and computing resources._
 
 # <span style="color:green">QUICK START GUIDE</span>
 
@@ -79,17 +51,32 @@ ___How?___ Once you have obtained a CU IdentiKey, complete the following steps:
 
 1. You will have received an official CU Email address, usually `<IdentiKey>@colorado.edu`. For example, if your IdentiKey is `jodo2020` your CU email address will be `jodo2020@colorado.edu`. Please make sure they you either 1) check this email regularly or 2) forward email from this address to your personal email address. This is important because CURC account correspondence will go to your `<IdentiKey>@colorado.edu` address. 
 
-2. Now navigate to the [CURC accounts management portal](https://rcamp.rc.colorado.edu/accounts/account-request/create/verify/ucb). You will come to the following screen:
+2. Now navigate to the [CURC accounts management portal](https://rcamp.rc.colorado.edu/accounts/account-request/create/verify/ucb). 
+
+__You will come to the following screen:__
 
 ![](images/o2a_rcamp.png)
  
-Do the following:
+_Do the following:_
 * enter your IdentiKey username and password where prompted.
 * enter "Odor2Action" for your _Department_
 * choose "Sponsored Affiliate" for your _Role_
 * click on `Verify and Continue`.
 
-On the next screen, if you are prompted about which resource you wish to access, choose "Blanca". Finish the process to submit your account request. You will receive an email to your `<IdentiKey>@colorado.edu` email address when your account has been provisioned. 
+__You will now come to a screen asking why you are requesting an account:__
+
+![](images/o2a_rcamp_2.png)
+
+_Do the following:_
+* check the box for "My research group has purchased PetaLibrary space..."
+* check the box for "My research group has purchased condo nodes..."
+* click on `Agree & Submit Reqest`
+
+__If your account request is successful, you'll see the following screen:__ 
+
+![](images/o2a_rcamp_3.png)
+
+You will receive an email to your `<IdentiKey>@colorado.edu` email address when your account has been provisioned. 
 
 ___How long will it take?___ Accounts are generally approved and provisioned within 1-2 hours during M-F business hours. After hours or weekend requests may not be provisioned until the next business day.
 
@@ -258,7 +245,7 @@ The first command will install the ipykernel package if not installed already. T
 export JUPYTER_PATH=/pl/active/<some_env>/share/jupyter
 ```
 
-If you need assistance creating or installing environments or Jupyter kernels, contact us at rc-help@colorado.edu. 
+If you need assistance creating or installing environments or Jupyter kernels, contact us at [rc-help@colorado.edu](mailto:rc-help@colorado.edu). 
 
 ###### Using Dask to spawn multi-core jobs from CURC JupyterHub
 
@@ -339,22 +326,393 @@ OpenGL applications.
 
 ### Accessing the O2A Blanca node (command line, batch computing)
 
+#### Logging in
+##### Logging in from a Windows Machine
+
+Logging in from a Windows machine requires the additional step of [installing the PuTTY ssh client](https://www.putty.org/) onto your local machine. This application allows users to connect to remote servers with the ssh protocol. Note that there are other ssh clients that allow Windows machines to connect to remote ssh servers; Research Computing recommends PuTTY for reliability and simplicity.
+
+1. Open the PuTTY application on your computer
+    * Under “Host Name (or IP address)”, enter `login.rc.colorado.edu`. Select “SSH” as the connection type. Click on “Open”.
+2. Enter your Identikey in response to the “login as” prompt
+3. When prompted to enter your password:
+    * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request from the Duo app on your phone. Approve the request.
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.html).
+    * Note that as a security feature, PuTTY does not display any text while you type your password
+
+
+##### Logging in from a Mac
+
+Logging in with a Mac requires no extra installation on your local machine. Simply utilize the terminal application that is pre-installed with your operating system to access Research Computing resources. 
+
+1. Under “File”, open a new finder window. Navigate to the “Applications” folder, then the “Utilities” folder. Open a terminal window and type `ssh username@login.rc.colorado.edu`, where `username` is your assigned username. Press enter.
+2. Enter your password:
+    * If you are logging in using Duo Push, type your Identikey password.  You will then receive an authentication request on the Duo app on your phone. Approve the request.
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.html).
+
+##### Logging in from Linux
+
+Much like with Macs, Linux machines require no additional setup to access Research Computing resources. Simply utilize the your Linux terminal to access Research Computing resources. 
+
+1. Open a terminal window from your application menu and type: `ssh username@login.rc.colorado.edu`, where `username` is your research computing username.
+
+2. Enter your password:
+    * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request on the Duo app on your phone. Approve the request.
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.html).
+
+##### SSH host keys
+
+The first time you log into an RC login node you will be asked to verify the host key. You can refer to the keys published here to confirm that you are connecting to a valid RC login node.
+
+Note that each login node may support more than one type of key, but only one is used (or displayed) by your client at any given time.
+
+#### Running jobs
+
+## Running applications with Jobs
+
+Because CURC computing resources are shared among many researchers, Research Computing manages usage of the system through jobs. **Jobs** are simply an allotment of resources that can be used to execute processes. Research Computing uses a program named the *Simple Linux Utility for Resource Management*, or **Slurm**, to create and manage jobs.
+
+In order to run a program on the O2A partition on Blanca, you must request resources from Slurm to generate a job. Resources can be requested from a login node or a compile node. You must then provide commands to run your program on those requested resources. Where you provide you commands depends on whether you are running a [batch job](https://curc.readthedocs.io/en/latest/running-jobs/batch-jobs.html) or an [interactive job](https://curc.readthedocs.io/en/latest/running-jobs/interactive-jobs.html).
+
+When you submit a batch job or an interactive job, it will be placed in a queue until resources are available. [A detailed guide on the Slurm queue and accounting tools can be found here.](https://curc.readthedocs.io/en/latest/running-jobs/slurm-commands.html)
+
+##### Batch Jobs
+
+The primary method of running applications on Research Computing resources is through a batch job. A **batch job** is a job that runs on a compute node with little or no interaction with the users. You should use batch jobs for:
+
+- Any computationally expensive application that could take hours or days to run
+- Any application that requires little or no user input
+- Applications that you do not need to monitor extensively
+
+Unlike running an application on your personal machine, you do not call the application you wish to run directly. Instead you create a **job script** that includes a call to your application. Job scripts are simply a set of resource requests and commands. When a job script is submitted all the commands in the job script are executed on a compute node. 
+
+Once you've created your job script it can be submitted to the Slurm queue with the `sbatch` command followed by your job script name:
+
+```bash
+sbatch <your-jobscript-name>
+```
+
+If no job script is provided then `sbatch` will take whatever commands follow as standard input.
+
+A detailed guide [on constructing and submitting Job scripts can be found here.](https://curc.readthedocs.io/en/latest/running-jobs/batch-jobs.html)
+
+##### Interactive Jobs
+
+Another method of running applications on Research Computing resources is through an interactive job. As the name would imply, an **interactive job** is a job that allows users to interact with requested resources in real time. Users can run applications, execute scripts, or run other commands directly on a compute node. Interactive jobs should be used for:
+
+- Debugging applications or workflows
+- Any application that requires user input at runtime
+- Any application with a GUI (Graphical User Interface)
+
+You can request an interactive job by using the `sinteractive`command. Unlike the `sbatch`, resources must be requested via the command line through the use of flags. Though running sinteractive without any flags is possible, this will result in default values being used for your jobs. Research Computing highly recommends you provide a `partition` and a `time` parameter to avoid long queue times or accidental overuse of your priority. 
+
+```bash
+sinteractive --partition=blanca-o2a --time=00:10:00
+```
+
+[A list of sinteractive parameters can be found here](https://curc.readthedocs.io/en/latest/running-jobs/job-resources.html)
+
+The example above will submit an interactive job that will run a terminal session on one core of one node with the Odor2Action partition (`blanca-o2a`) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
+
+More details [on running Interactive Jobs can be found here.](https://curc.readthedocs.io/en/latest/running-jobs/interactive-jobs.html)
+
 # <span style="color:green">OTHER TOPICS</span>
 
 ## Using Matlab on CURC
 
-Coming Soon
+### Overview
+
+Research Computing (RC) provides a large suite of software on RC
+resources. In this tutorial we will learn how to run Matlab on these
+resources. The tutorial assumes you are familiar with Matlab and basic
+Linux terminal commands.
+
+There are two basic ways to run Matlab (or many other kinds of
+software) on RC resources. The first is through an interactive job,
+and the second is through a batch job. An interactive job allows one
+to work in real-time with Matlab. Two reasons you may want to do this
+would be if you are actively debugging your code, or if you would like
+to use the GUI (in this instance, the Matlab Desktop). However, there
+might be other reasons you would like to work interactively with
+Matlab.
+
+The second way to run Matlab on RC resources is by submission of a
+batch job. This allows the job to run in the background when resources
+become available. You may choose to use this method if you have a
+large job that may wait in the queue for awhile, or if you are not
+debugging or in need of a GUI. Both ways to work with Matlab are
+below.
+
+### Submitting Matlab Interactive Jobs
+
+Running Matlab interactive jobs on RC resources is both a simple and
+easy task to accomplish. In this section we will learn how to launch
+Matlab as an interactive job. 
+
+Begin by launching an interactive job from a CURC login node by loading slurm/blanca into
+your environment and running the `sinteractive` command.
+
+```bash
+module load slurm/blanca
+sinteractive
+```
+
+From here you will load the Matlab module into your environment.
+
+```bash
+module load matlab
+```
+
+Lastly we will run Matlab from the terminal.
+
+```bash
+matlab -nosplash
+```
+
+By default Matlab will load an interactive terminal session. If you would like to access the Matlab GUI 
+then simply run Matlab with X11 forwarding enabled, or start Matlab from a terminal within an EnginFrame session.
+
+To find out how you enable X11 forwarding in your terminal session, [check out our X11 forwarding tutorial here.](https://curc.readthedocs.io/en/latest/running-jobs/interactive-jobs.html#interactive-gui-applications)
+
+### Submitting Matlab Batch Jobs
+
+Here, we will learn how to run a Matlab script in a non-interactive
+batch job. 
+
+Let’s begin by constructing a small Matlab script that prints ‘hello
+world’ to the user.  The Matlab script we will use for the purposes of
+this tutorial is called `hello_world.m` and contains only one line,
+the Matlab command:
+
+```matlab
+fprintf(‘Hello world\n’)
+```
+
+Which simply prints "Hello world" when called.
+
+Next, we will construct our batch script that will enable us to submit
+this job. The batch script organizes the variety of flags slurm needs
+to submit a job and specifies the software commands we want to
+execute. An advantage of batch scripts is that they are easily
+reusable and adaptable for other similar tasks.
+
+We will submit this job using a bash script titled: `slurm_hello.sh`,
+which contains the following lines:
+
+```bash
+#!/bin/bash
+
+#SBATCH --nodes=1
+#SBATCH --time=0:01:00
+#SBATCH --partition=blanca-o2a
+#SBATCH --ntasks=1
+#SBATCH --job-name=Matlab_Hello_World
+#SBATCH --output=Matlab_Hello_World.out
+
+module purge
+
+module load matlab
+
+matlab -nodesktop -nodisplay -r ‘clear; hello_world;’
+```
+
+This file has a few basic parts:
+
+1. The first line specifies that it is a bash shell script, and
+   ensures the rest of the lines will be interpreted in the correct
+   shell.
+
+2. The lines beginning with `#SBATCH` specify the Slurm parameters
+   that will be used for this job. These lines are viewed as comments
+   by bash, but will be read by Slurm. Of particular note is the
+   `--output` parameter which specifies the file where stderr and
+   stdout (including the output from our Matlab script) will be
+   written. For a description of the Slurm parameters, [please see the
+   general Slurm documentation
+   here](https://slurm.schedmd.com/sbatch.html)
+
+3. The lines beginning with `module purge` remove any unneeded
+   software and ensure that the appropriate Matlab module is loaded on
+   the compute node.
+
+4. The final line calls Matlab and instructs it to run our
+   script. This entire line includes commands that are specific to
+   Matlab; the `nodesktop` and `nodisplay` flags ensure that the
+   Matlab Desktop will not open, and the `r` flag will run the script
+   `hello_world`. The `clear` command forces Matlab to clear any
+   existing variables, and is simply included as good coding practice.
+
+You have now completed your batch script. After saving the script and
+exiting your text editor, submit the job as follows:
+
+```bash
+sbatch slurm_hello.sh
+```
+
+Once the job has run, the output of the Matlab script, "Hello world"
+will be shown in `Matlab_Hello_World.out`.
+
+
+### Parallel Matlab on Blanca
+
+To fully utilize the multi-core capabilities of Blanca to speed up
+jobs, most code must first be parallelized. Matlab has many built in
+tools to accomplish this task. In this tutorial we will parallelize
+our "Hello World" program.
+
+Let’s begin with the Matlab script we created above called
+`hello_world.m`. First we will modify the fprintf line so that it
+includes a variable 'i' that will print out the iteration of the
+parallel loop.
+
+```matlab
+fprintf(“Hello World from process %i”, i)
+```
+
+Next, we need to encapsulate the print statement in a parallel 'for'
+loop. Matlab uses the construct parfor to separate the task into
+multiple threads. In order to utilize the `parfor` command one must
+ensure that the Parallel Computing Toolbox is available as part of the
+Matlab software package. RC has this available and thus no additional
+action is required on your part if you are utilizing RC resources.
+
+The order of runtime in the loop is not guaranteed, so the output may
+not be in sequential order. The loop is formatted as such:
+
+```matlab
+parfor(i = initial_Value:final_Value, maximum_amount_of_threads)
+```
+
+For example, let’s use parfor to implement an 5-iteration loop with a
+maximum of 4 processors in our script (new lines are highlighted here
+in blue):
+
+```matlab
+parfor(i = 1:5, 4)
+        fprintf("Hello, World from process %i", i)
+end
+```
+
+Now all we have left to do is modify our batch script to specify that
+we want to run 4 tasks on the node. We can also change the name of the job and the
+output file if we choose.
+
+```bash
+#!/bin/bash
+
+#SBATCH --nodes=1
+#SBATCH --time=0:01:00
+#SBATCH --partition=blanca-o2a
+#SBATCH --ntasks=4
+#SBATCH --job-name=Matlab_Parallel_Hello
+#SBATCH --output=Matlab_Parallel_Hello.out
+
+module purge
+
+module load matlab
+
+matlab -nodesktop -nodisplay -r 'clear; hello_world;'
+```
+
+Now we submit the job using the `sbatch` command shown above, and our
+output in `Matlab_Parallel_Hello.out` will be as follows (the process
+order may be different in your output):
+
+```
+Hello World from process 4
+Hello World from process 1
+Hello World from process 2
+Hello World from process 3
+```
+
+RC Matlab currently does not support parallelization across nodes,
+only across cores on one node.
+
+# <span style="color:green">GETTING HELP</span>
+
+## User support for CURC resources
+* contact [rc-help@colorado.edu](mailto:rc-help@colorado.edu)
+	* _note that in addition to email correspondence, we will gladly do Zoom consultations on request to help you get started, provide workflow assistance, or troubleshoot issues_
+
+## CURC main documentation
+* [https://curc.readthedocs.io](https://curc.readthedocs.io)
+
+## Odor2Action questions
+* contact [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) 
 
 # <span style="color:green">FAQ</span>
 
 ## I have a new phone and Duo isn't working
 
-Coming Soon
+You can add a new device to your duo account by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>.
+After a CU authorization page you will be directed to a Duo authentication page. **Ignore the Duo Push prompt and instead click "Settings":** 
+
+![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management1edit.png)
+
+In this settings side bar click "Add a new device.":
+
+![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management2edit.png)
+
+Duo will then try to authenticate your account by push notification to verify your identity. Cancel this push notifcation...  
+
+<!-- insert image here ![]() -->
+
+...and click on "Enter a Passcode", or "Call Me". 
+- If you select "Call Me" the simply recieve the call and press 1. 
+- If you select "Enter a passcode" then click "Text me new codes" and you will be sent a list of one time passwords. Type in any one of the codes and you will be authenticated. 
+Once you have verified your identity, follow the instructions provided by Duo to add your device.
+
+If you cannot authenticate your account, contact rc-help@colorado.edu for further assistance.
 
 ## I can't access the O2A Blanca node
 
-Coming Soon
+To access the O2A Blanca node from a terminal on your laptop or desktop computer:
 
-## I can't access the O2A PetaLibrary space
+```bash
+# first login:
+$ ssh <IdentiKey>@login.rc.colorado.edu
+# <type password and accept duo push to your phone to login>
 
-Coming Soon
+# Now once you are on a CURC login node, load the slurm job manager for Blanca
+$ module load slurm/blanca
+
+# <now you can either start an interactive job or submit a batch job>.
+# start an interactive job (e.g.,. for a 1 hour job with 2 cores on blanca-o2a):
+$ sinteractive --time=01:00:00 --ntasks=2 --partition=blanca-o2a
+
+# or submit a batch job (assumes you have previously written a job script called 'myjob.sh'):
+$ sbatch myjob.sh
+```
+
+If you cannot submit jobs to the `blanca-o2a` partition, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and cc [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) and request to be added to `blanca-o2a`.
+
+## I can't access the O2A PetaLibrary allocation
+
+The path to the O2A PetaLibrary allocation is `/pl/active/o2a`. You should be able to access this directory and its subdirectories by typing the full path from the command line, or (if using Globus), by typing the path into the "path" dialog box. If you encounter "permission denied" errors, it is likely you have not been added to the `odor2action` user group.  In this case, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and cc [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) and request to be added to `oder2action`
+
+# <span style="color:green">DEFINITIONS</span>
+
+### <a href="https://oit.colorado.edu/services/identity-access-management/identikey" target="_blank">IdentiKey</a>
+_An IdentiKey consists of a CU Boulder username and an IdentiKey password. An IdentiKey is the credential that uniquely identifies you to online services and campus computing facilities so that they may grant you access._
+
+### <a href="https://www.colorado.edu/rc/resources/summit" target="_blank">RMACC Summit</a>
+_An NSF-funded supercomputer operated by CURC and freely available to CU users and affiliates._
+
+### <a href="https://www.colorado.edu/rc/resources/blanca" target="_blank">Blanca</a>
+_The CURC condo computing service "Blanca" offers researchers the opportunity to purchase and own compute nodes that will be operated as part of a shared cluster. The aggregate cluster is made available to all condo partners while maintaining priority for the owner of each node. Odor2Action owns a Blanca node for use by O2A affiliates._
+
+### <a href="https://www.colorado.edu/rc/resources/petalibrary" target="_blank">PetaLibrary</a>
+_A CURC service that enables the storage, archival, and sharing of research data. It is available at a subsidized cost to any researcher affiliated with the University of Colorado Boulder. The Odor2Action project owns a PetaLibrary allocation for use by O2A affiliates._
+
+### <a href="https://www.globus.org" target="_blank">Globus</a>
+_A web-based service that enables quick and intuitive data transfer and sharing between endpoints._
+
+### <a href="https://docs.globus.org/faq/globus-connect-endpoints/#what_is_an_endpoint" target="_blank">Endpoint</a>
+_An "endpoint" is a Globus term referring to one of the two file transfer locations – either the source or the destination – between which files can move. Once a resource (server, cluster, storage system, laptop, or other system) is defined as an endpoint, it will be available to authorized users who can transfer files to or from this endpoint._
+
+### <a href="https://www.colorado.edu/rc/resources/enginframe" target="_blank">EnginFrame cluster</a>
+
+_The CURC EnginFrame cluster provides a 3d-accelerated remote desktop environment on an Nvidia GPU-equipped compute node hosted by CURC. Coupled with the proprietary Desktop Cloud Visualization (DCV) VNC server, the CURC EnginFrame supports the use of common visualization applications in a typical desktop environment (e.g. Matlab, Rstudio) using only a web browser._
+
+### <a href="https://www.colorado.edu/rc/resources/jupyterhub" target="_blank">JupyterHub</a>
+_JupyterHub is a multi-user server for Jupyter (formerly known as IPython) notebooks. It provides a web service that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. CURC hosts a JupyterHub environment that enables researchers to utilize CURC-hosted storage and computing resources._
+

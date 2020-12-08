@@ -6,7 +6,7 @@ Welcome to the CU Boulder Research Computing (CURC) documentation for users affi
 ----
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: -1
 
    main/index
 

@@ -53,7 +53,7 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-html_logo = 'o2a_logo.jpg'
+html_logo = 'main/images/O2A1.png'
 html_theme_options = {
     'logo_only': True,
     'display_version': False,
