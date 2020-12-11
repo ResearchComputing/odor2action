@@ -1,29 +1,4 @@
-
-## <span style="color:green">OVERVIEW</span>
-
-The aim of this documentation is to provide a step-by-step guide for users of Odor2Action (O2A) data and centralized computing resources. The data storage and computing resources are hosted by CU Research Computing (CURC). This documentation should help you get started with most tasks, however you can refer to the [main CURC documentation page](https://curc.readthedocs.io) for additonal information.
-
-The following schematic may be useful for visualizing CURC resources: 
-
-![](images/o2a_overview.png)
-
-__Resources__: The following computing and storage resources are available to O2A users:
-
-1. The dedicated O2A compute node on the <a href="https://www.colorado.edu/rc/resources/blanca" target="_blank">Blanca condo cluster</a> (most computing tasks)
-2. Shared computing nodes on the <a href="https://www.colorado.edu/rc/resources/summit" target="_blank">RMACC Summit supercomputer</a> (very big computing tasks)
-3. The <a href="https://www.colorado.edu/rc/resources/enginframe" target="_blank">CURC EnginFrame ("Viz") cluster</a> (GPU nodes for visualizing images & using software requiring a graphical user interface, or "GUI")
-4. The <a href="https://www.colorado.edu/rc/resources/petalibrary" target="_blank">CURC PetaLibrary</a> (storage of O2A datasets)
-
-__Gateways__: The computing and storage resources can be accessed through the following gateways:
-
-1. Via the command line (Access to Blanca or Summit for batch computing, or PetaLibrary for data transfer)
-2. Via the <a href="https://www.colorado.edu/rc/resources/jupyterhub" target="_blank">CURC JupyterHub</a> (Access to Blanca or Summit to run iPython notebooks)
-3. Via <a href="https://www.colorado.edu/rc/resources/enginframe" target="_blank">CURC EnginFrame</a> (Access to the Visualization cluster)
-4. Via <a href="https://www.globus.org" target="_blank">Globus</a> (transfer files to/from PetaLibrary or other CURC filesystems)
-
-_See the [Quick Start Guide](#span-style-color-green-quick-start-guide-span) to access CURC resources via gateways._
-
-# <span style="color:green">QUICK START GUIDE</span>
+# QUICK START GUIDE
 
 ## Step 1: Getting a CU Identikey
 
@@ -120,11 +95,17 @@ Files can easily be transferred to/from PetaLibrary or other CURC filesystems, f
 
 Note that you can use the "Path" field to navigate to the O2A PetaLibrary allocation. Type `/pl/active/odor2action` in the "Path" field, and then you can use your mouse to navigate deeper into the O2A allocation if needed.
 
-#### Sharing data with Globus Shared Endpoints
-With Globus you can share files with users outside of CU who do not have CURC accounts by creating shared endpoints. You can share any file/folder that you have access to.  The user you are sharing with has to have a Globus account.
+---
+**NOTE**
 
-To learn how to setup a shared endpoint:
-[Globus Shared Endpoint Documentation](https://docs.globus.org/how-to/share-files/)
+It is recommended that you only initiate one active Globus data transfer to a given subdirectory in PetaLibrary at a time.  Running multiple active transfers to the same subdirectory simultaneously may result in a failed transfer. 
+
+---
+
+#### Sharing data with Globus Shared Endpoints
+With Globus you can share files with users outside of CU who do not have CURC accounts by creating shared endpoints. You can share any file/folder that you have access to.  The user you are sharing with must have a Globus account (these are freely available to anyone).
+
+To setup a shared endpoint contact the O2A Project Manager at [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu]. 
 
 ### Accessing JupyterHub (python notebooks)
 
@@ -249,7 +230,7 @@ If you need assistance creating or installing environments or Jupyter kernels, c
 
 ###### Using Dask to spawn multi-core jobs from CURC JupyterHub
 
-_Dask is a flexible library for parallel computing in Python. Documentation for using Dask on RC JupyterHub is forthcoming. In the meantime, if you need help integrating Dask with Slurm so that you can run multicore jobs on the CURC JupyterHub, please contact us at rc-help@colorado.edu._
+_Dask is a flexible library for parallel computing in Python. Documentation for using Dask on RC JupyterHub is forthcoming. In the meantime, if you need help integrating Dask with Slurm so that you can run multicore jobs on the CURC JupyterHub, please contact us at [rc-help@colorado.edu](mailto:rc-help@colorado.edu)._
 
 #### Troubleshooting
 
@@ -272,7 +253,7 @@ desktop environment using only a modern web browser.
 #### Step 1: Request access and login to EnginFrame
 
 Access to EnginFrame is granted on request. Request access by sending
-email to [rc-help@colorado.edu](rc-help@colorado.edu).
+email to [rc-help@colorado.edu](mailto:rc-help@colorado.edu).
 
 Once access has been granted, EnginFrame is available at
 [https://viz.rc.colorado.edu/](https://viz.rc.colorado.edu/).
@@ -336,7 +317,7 @@ Logging in from a Windows machine requires the additional step of [installing th
 2. Enter your Identikey in response to the “login as” prompt
 3. When prompted to enter your password:
     * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request from the Duo app on your phone. Approve the request.
-    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.html).
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](https://curc.readthedocs.io/en/latest/access/duo-2-factor-authentication.html).
     * Note that as a security feature, PuTTY does not display any text while you type your password
 
 
@@ -347,7 +328,7 @@ Logging in with a Mac requires no extra installation on your local machine. Simp
 1. Under “File”, open a new finder window. Navigate to the “Applications” folder, then the “Utilities” folder. Open a terminal window and type `ssh username@login.rc.colorado.edu`, where `username` is your assigned username. Press enter.
 2. Enter your password:
     * If you are logging in using Duo Push, type your Identikey password.  You will then receive an authentication request on the Duo app on your phone. Approve the request.
-    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.html).
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](https://curc.readthedocs.io/en/latest/access/duo-2-factor-authentication.html).
 
 ##### Logging in from Linux
 
@@ -357,7 +338,7 @@ Much like with Macs, Linux machines require no additional setup to access Resear
 
 2. Enter your password:
     * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request on the Duo app on your phone. Approve the request.
-    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.html).
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](https://curc.readthedocs.io/en/latest/access/duo-2-factor-authentication.html).
 
 ##### SSH host keys
 
@@ -415,7 +396,7 @@ The example above will submit an interactive job that will run a terminal sessio
 
 More details [on running Interactive Jobs can be found here.](https://curc.readthedocs.io/en/latest/running-jobs/interactive-jobs.html)
 
-# <span style="color:green">OTHER TOPICS</span>
+# OTHER TOPICS
 
 ## Using Matlab on CURC
 
@@ -627,7 +608,7 @@ Hello World from process 3
 RC Matlab currently does not support parallelization across nodes,
 only across cores on one node.
 
-# <span style="color:green">GETTING HELP</span>
+# GETTING HELP
 
 ## User support for CURC resources
 * contact [rc-help@colorado.edu](mailto:rc-help@colorado.edu)
@@ -639,7 +620,7 @@ only across cores on one node.
 ## Odor2Action questions
 * contact [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) 
 
-# <span style="color:green">FAQ</span>
+# FAQ
 
 ## I have a new phone and Duo isn't working
 
@@ -661,7 +642,7 @@ Duo will then try to authenticate your account by push notification to verify yo
 - If you select "Enter a passcode" then click "Text me new codes" and you will be sent a list of one time passwords. Type in any one of the codes and you will be authenticated. 
 Once you have verified your identity, follow the instructions provided by Duo to add your device.
 
-If you cannot authenticate your account, contact rc-help@colorado.edu for further assistance.
+If you cannot authenticate your account, contact [rc-help@colorado.edu](mailto:rc-help@colorado.edu) for further assistance.
 
 ## I can't access the O2A Blanca node
 
@@ -689,7 +670,7 @@ If you cannot submit jobs to the `blanca-o2a` partition, please email [rc-help@c
 
 The path to the O2A PetaLibrary allocation is `/pl/active/o2a`. You should be able to access this directory and its subdirectories by typing the full path from the command line, or (if using Globus), by typing the path into the "path" dialog box. If you encounter "permission denied" errors, it is likely you have not been added to the `odor2action` user group.  In this case, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and cc [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) and request to be added to `oder2action`
 
-# <span style="color:green">DEFINITIONS</span>
+# DEFINITIONS
 
 ### <a href="https://oit.colorado.edu/services/identity-access-management/identikey" target="_blank">IdentiKey</a>
 _An IdentiKey consists of a CU Boulder username and an IdentiKey password. An IdentiKey is the credential that uniquely identifies you to online services and campus computing facilities so that they may grant you access._

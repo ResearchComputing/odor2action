@@ -57,6 +57,8 @@ html_logo = 'main/images/O2A1.png'
 html_theme_options = {
     'logo_only': True,
     'display_version': False,
+    'collapse_navigation': False,
+    'navigation_depth': 3,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
