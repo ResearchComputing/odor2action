@@ -24,7 +24,7 @@ ___Why?___ A CURC account enables access to CURC resources and also ensures you 
 
 ___How?___ Once you have obtained a CU IdentiKey, complete the following steps:
 
-1. You will have received an official CU Email address, usually `<IdentiKey>@colorado.edu`. For example, if your IdentiKey is `jodo2020` your CU email address will be `jodo2020@colorado.edu`. Please make sure they you either 1) check this email regularly or 2) forward email from this address to your personal email address. This is important because CURC account correspondence will go to your `<IdentiKey>@colorado.edu` address. 
+1. You will have received an official CU Email address, usually `<IdentiKey>@colorado.edu`. For example, if your IdentiKey is `jodo2020` your CU email address will be `jodo2020@colorado.edu`. __You can access this email via [Gmail](https://www.gmail.com).__ Please make sure you either 1) check this email regularly or 2) forward email from this address to your personal email address. This is important because CURC account correspondence will go to your `<IdentiKey>@colorado.edu` address. 
 
 2. Now navigate to the [CURC accounts management portal](https://rcamp.rc.colorado.edu/accounts/account-request/create/verify/ucb). 
 
@@ -67,17 +67,40 @@ _Additional information can be found in the [CURC Duo documentation](https://cur
 
 ___How long will it take?___ Duo accounts are usually provisioned when your CURC account is established (Step 2 above). It will take 5 minutes or less to set up the Duo app on your smartphone and link it to your account.  
 
-## Step 4: Accessing CURC Resources
+## Step 4: Request access to O2A resources
+
+___What?___ Now that you have a CU Reserch Computing account, you'll need to request access to specific storage, computing and vizualization resources. 
+
+___Why?___ Having access the O2A PetaLibrary allocation (where O2A datasets are stored), the O2A Blanca node and Summit nodes (computing), as well as EnginFrame (use of graphical software interfaces for Matlab, etc.) will enable you to work with O2A data.  
+
+___How?___ Email [rc-help@colorado.edu](mailto:rc-help@colorado.edu), and cc the O2A PM [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) with the following text:
+
+```
+Hello CURC,
+
+I am an Odor2Action user of CURC resources.  May I please be added to the following:
+
+1. crimaldigrp 
+2. blanca-o2a account
+3. ucb-general account
+4. Engineframe cluster
+```
+
+___How long will it take?___ Such requests are generally fulfilled within 1-2 hours during M-F business hours. After hours or weekend requests may not be provisioned until the next business day.
+
+Now that you have completed the Quick Start Guide for onboarding, you can [learn how to access CURC resources](#accessing-curc-resources)!
+
+# USING CURC RESOURCES
 
 After completing Steps 1-3 above you will be able to login to CURC systems via a variety of _gateways_ depending on the resources you wish to access. Each gateway is described below. 
 
-### Accessing PetaLibrary (file transfer)
+## PetaLibrary (file transfer)
 
 The O2A project has an allocation on <a href="https://www.colorado.edu/rc/resources/petalibrary" target="_blank">CURC PetaLibrary</a>, which is CURC's data storage and sharing platform. While there are numerous ways to transfer files to/from PetaLibrary, <a href="https://www.globus.org" target="_blank">Globus</a> is the recommended means of doing so. Users who prefer using command line methods for file transfers (e.g., _scp_, _sftp_ or _rsync_) may refer to the [CURC data transfer documentation](https://curc.readthedocs.io/en/latest/compute/data-transfer.html).
 
 Globus is a web-based service that enables quick and intuitive data transfer and sharing between _endpoints_. Globus addresses deficiencies in secure copy requests by automating large data transfers, resuming failed transfers, and simplifying the implementation of high performance transfers between computing centers. An "endpoint" is a Globus term referring to one of the two file transfer locations – either the source or the destination – between which files can move. Once a resource (server, cluster, storage system, laptop, or other system) is defined as an endpoint, it will be available to authorized users who can transfer files to or from this endpoint.
 
-#### Using Globus to Transfer Files
+### Using Globus to Transfer Files
 
 [Sign into Globus](https://www.globus.org/app/login) by
 selecting "University of Colorado at Boulder" from the dropdown menu
@@ -93,33 +116,29 @@ Files can easily be transferred to/from PetaLibrary or other CURC filesystems, f
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/june-updates/File-Transfers/globus-image-2new.PNG)
 
-Note that you can use the "Path" field to navigate to the O2A PetaLibrary allocation. Type `/pl/active/odor2action` in the "Path" field, and then you can use your mouse to navigate deeper into the O2A allocation if needed.
+You can now use the "Path" field to navigate to the O2A PetaLibrary allocation. Type `/pl/active/odor2action` in the "Path" field, and then you can use your mouse to navigate deeper into the O2A allocation if needed.
 
----
-**NOTE**
+> **_NOTE:_** _It is recommended that you only initiate one active Globus data transfer to a given subdirectory in PetaLibrary at a time.  Running multiple active transfers to the same subdirectory simultaneously may result in a failed transfer._ 
 
-It is recommended that you only initiate one active Globus data transfer to a given subdirectory in PetaLibrary at a time.  Running multiple active transfers to the same subdirectory simultaneously may result in a failed transfer. 
 
----
-
-#### Sharing data with Globus Shared Endpoints
+### Sharing data with Globus Shared Endpoints
 With Globus you can share files with users outside of CU who do not have CURC accounts by creating shared endpoints. You can share any file/folder that you have access to.  The user you are sharing with must have a Globus account (these are freely available to anyone).
 
 To setup a shared endpoint contact the O2A Project Manager at [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu]. 
 
-### Accessing JupyterHub (python notebooks)
+## JupyterHub (python notebooks)
 
 [Jupyter notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using _Python_, _R_, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text which provide an integrated enviornment to use, learn, and teach interactive data analysis.  
 
 CU Research Computing (CURC) operates a [JupyterHub server](https://jupyterhub.readthedocs.org/en/latest/) that enables users to run Jupyter notebooks on Summit or Blanca for serial (single core) and shared-memory parallel (single node) workflows. The CURC JupyterHub uses the next-generation [JupyterLab](https://jupyterlab.readthedocs.io) user interface. The CURC JupyterHub runs atop of [Anaconda](http://anaconda.com).  Additional documentation on the [CURC Anaconda distribution](https://curc.readthedocs.io/en/latest/software/python.html) is available and may be a good pre-requisite for the following documentation outlining use of the CURC JupyterHub.
 
-#### Step 1: Log  in to CURC JupyterHub
+### Step 1: Log  in to CURC JupyterHub
 
 CURC JupyterHub is available at [https://jupyter.rc.colorado.edu](https://jupyter.rc.colorado.edu). To log in use your RC credentials. If you do not have an RC account, please [request an account before continuing.](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization)
 
-#### Step 2: Start a notebook server
+### Step 2: Start a notebook server
 
-To start a notebook server, select one of the `Blanca (12hr)` option in the *Select job profile* menu under *Spawner Options* and click *Spawn*. 
+To start a notebook server, select the `Blanca (12hr)` option in the *Select job profile* menu under *Spawner Options* and click *Spawn*. 
 
 The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC `/home` directory in the left menu bar. In the main work area on the right hand side you will see the "Launcher" and any other tabs you may have open from previous sessions.
 
@@ -127,7 +146,7 @@ The server will take a few moments to start.  When it does, you will be taken to
   <img src="https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/docs/gateways/jupyterhub/jupyterlab1.png"/>
 </p>
 
-#### Step 3: Navigating the JupyterLab Interface
+### Step 3: Navigating the JupyterLab Interface
 
 The following features are availabe in the [JupyterLab Interface](https://jupyterlab.readthedocs.io/en/stable/user/interface.html):
 
@@ -147,7 +166,7 @@ The following features are availabe in the [JupyterLab Interface](https://jupyte
    * Open other functions; the "Terminal" function is particularly useful, as it enables you to access the command line on the Summit or Blanca node your Jupyterhub job is currently running on. 
 * See Jupyter's [documentation on the JupyterLab Interface for additional information.](https://jupyterlab.readthedocs.io/en/stable/user/interface.html)
 
-##### Tip for finding the packages available to you within a notebook
+#### Tip for finding the packages available to you within a notebook
 
 The ___Python 3___ notebook kernel has many preinstalled packages. To query a list of available packages from a python notebook, you can use the following nomenclature:
 
@@ -159,103 +178,36 @@ pipmain(['freeze'])
 If the packages you need are not available, [you can create your own custom environment and Jupyter kernel](#additional-documentation).
 
     
-##### For users who prefer the "old school" classic Jupyter interface in favor of JupyterLab
+#### For users who prefer the "old school" classic Jupyter interface in favor of JupyterLab
 
 You can access the Jupyter classic view by going to the address bar at the top of your broswer and changing "lab" to "tree" in the URL.  For, example, if your session URL is https://jupyter.rc.colorado.edu/user/janedoe/lab, you can change this to https://jupyter.rc.colorado.edu/user/janedoe/tree . 
 
-#### Step 4: Shut down a Notebook Server
+### Step 4: Shut down a Notebook Server
 
-Go to the "File" menu at the top and choose "Hub Control Panel". Use the `Stop My Server` button in the `Control Panel` to shut down the Jupyter notebook server when finished (this cancels the job you are running on Blanca). You also have the option to restart a server if desired.
+When you are finished, go to the "File" menu at the top and choose "Hub Control Panel". Use the `Stop My Server` button in the `Control Panel` to shut down the Jupyter notebook server when finished (this cancels the job you are running on Blanca). You also have the option to restart a server if desired.
 
 Alternately, you can use the `Quit` button from the Jupyter home page to shut down the Jupyter notebook server.
 
 Using the `Logout` button will log you out of CURC JupyterHub.  It will not shut down your notebook server if one happens to be running.  
 
-#### Additional Documentation
+### Additional Documentation
 
-##### Creating your own custom Jupyter kernels
+Users frequently need to build custom Anaconda environments that contain specific packages they need. The topics below will help you create your own environment and enable it for use in CURC JupyterHub.
+- [Create your own custom conda environment using the CURC Anaconda distribution](https://curc.readthedocs.io/en/latest/software/python.html#create-your-own-custom-environment)
+- [Create a Jupyter kernel to enable use of your custom conda environment in CURC JupyterHub](https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html#creating-your-own-custom-jupyter-kernels)
 
-The CURC JupyterHub runs on top of the [CURC Anaconda distribution](https://curc.readthedocs.io/en/latest/software/python.html). [Anaconda](http://anaconda.com) is an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. Software and associated Jupyter [kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) other than _python_ and _R_ can also be installed using _conda_. The following steps describe how to create your own custom Anaconda environments and associated Jupyter kernels for use on RC JupyterHub. 
+## EnginFrame (visualization, GUIs)
 
-Follow these steps from a terminal session. You can get a new terminal session directly from Jupyter using `New`-> `Terminal`.
-
-###### 1.  Configure your conda settings
-
-Follow our Anaconda documentation for [steps on configuring your conda settings via ~.condarc](https://curc.readthedocs.io/en/latest/software/python.html#configure-your-conda-settings).
-
-###### 2. Activate the CURC Anaconda environment
-
-```
-[johndoe@shas0137 ~]$ source /curc/sw/anaconda3/latest
-```
-
-You will know that you have properly activated the environment because you should see `(base)` in front of your prompt. E.g.: 
-
-```
-(base) [johndoe@shas0137 ~]$
-```
-
-###### 3. Create a new custom environment. 
-
-Follow our Anaconda documentation for [steps on creating your own custom conda environment](https://curc.readthedocs.io/en/latest/software/python.html#create-your-own-custom-environment).
+NICE EnginFrame provides a 3d-accelerated remote desktop environment on an Nvidia GPU-equipped compute node. Coupled with the proprietary Desktop Cloud Visualization (DCV) VNC server, the EnginFrame service supports the use of common visualization applications in a typical desktop environment via your web browser.
 
 
-###### 4. Activate your new environment
+### Step 1: Login to EnginFrame
 
-```
-(base) [johndoe@shas0137 ~]$ conda activate mycustomenv
-```
+> **_NOTE 1:_** _You'll need to be on the CU VPN to network to use EnginFrame. If you already have a VPN client on your machine you can connect to `vpn.colorado.edu` through that (login credentials are your CU IdentiKey and password). If you don't have a VPN client on your machine, you can [download one from the CU Office of Information Technology](https://oit.colorado.edu/services/network-internet-services/vpn/help)._ 
 
-(Note: we assume here that you've named your environment _mycustomenv_; please replace _mycustomenv_ with whatever name you gave your environment!)
+> **_NOTE 2:_** _You should have previously received access to EnginFrame when you [requested access to O2A resources](#step-4-request-access-to-o2a-resources). However, if you find you cannot login per the documentation below, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) to request access._
 
-###### 5. Create your own custom kernel, which will enable you to use this environment in CURC Jupyterhub:
-
-```
-(mycustomenv) [johndoe@shas0137 ~]$ conda install -y ipykernel
-(mycustomenv) [johndoe@shas0137 ~]$ python -m ipykernel install --user --name mycustomenv --display-name mycustomenv
-```
-
-The first command will install the ipykernel package if not installed already. The second command will create a kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name -- call them anything you want). By specifying the `--user` flag, the kernel will be in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
-
-
-###### Notes:
-* If you have already installed your own version of Anaconda or Miniconda, it is possible to create Jupyter kernels for your preexisting environments by following _Step 4_ above from within the active environment.  
-* If you need to use custom kernels that are in a location other than `/home/$USER/.local/share/jupyter` (for example, if your research team has a group installation of Anaconda environments located in `/pl/active/<some_env>`), you can create a file in your home directory named `~/.jupyterrc` containing the following line:
-
-```
-export JUPYTER_PATH=/pl/active/<some_env>/share/jupyter
-```
-
-If you need assistance creating or installing environments or Jupyter kernels, contact us at [rc-help@colorado.edu](mailto:rc-help@colorado.edu). 
-
-###### Using Dask to spawn multi-core jobs from CURC JupyterHub
-
-_Dask is a flexible library for parallel computing in Python. Documentation for using Dask on RC JupyterHub is forthcoming. In the meantime, if you need help integrating Dask with Slurm so that you can run multicore jobs on the CURC JupyterHub, please contact us at [rc-help@colorado.edu](mailto:rc-help@colorado.edu)._
-
-#### Troubleshooting
-
-Jupyter notebook servers spawned on RC compute resources log to `~/.jupyterhub-spawner.log`. Watching the contents of this file provides useful information regarding any problems encountered during notebook startup or execution.
-
-#### See Also
-
-* [CURC Anaconda distribution](https://curc.readthedocs.io/en/latest/software/python.html)
-* [JupyterLab homepage](https://jupyterlab.readthedocs.io)
-
-### Accessing EnginFrame (visualization, GUIs)
-
-NICE EnginFrame provides a 3d-accelerated remote desktop environment
-on an Nvidia GPU-equipped compute node. Coupled with the proprietary
-Desktop Cloud Visualization (DCV) VNC server, the EnginFrame service
-supports the use of common visualization applications in a typical
-desktop environment using only a modern web browser.
-
-
-#### Step 1: Request access and login to EnginFrame
-
-Access to EnginFrame is granted on request. Request access by sending
-email to [rc-help@colorado.edu](mailto:rc-help@colorado.edu).
-
-Once access has been granted, EnginFrame is available at
+In your web browser, navigate to the CURC EnginFrame instance at
 [https://viz.rc.colorado.edu/](https://viz.rc.colorado.edu/).
 
 From the welcome page, select "Views" from the available interfaces (or use [this direct link](https://viz.rc.colorado.edu/enginframe/vdi/vdi.xml)).
@@ -269,46 +221,35 @@ app) to log in.
 ![](images/login.png)
 
 
-#### Step 2: Starting a remote desktop
+### Step 2: Starting a remote desktop
 
-After logging in, select "Remote Desktop" from the list of services in
-the left sidebar. (Other custom services may be configured for you as
-well.)
+After logging in, you'll see some "Remote Desktop" options in the list of services in
+the left sidebar. Choose the opton for the "Nvidia Quadro RTX 8000".
 
 ![](images/vdi.png)
 
-When starting a Remote Desktop session you may customize the resources
-allocated to the session and other characteristics of the dispatched
-Slurm job. In most cases the defaults should be sufficient; however,
-you may need to supply a Slurm account if you are associated with more
-than one and you do not want to use your default account.
+When starting a Remote Desktop session you may customize the resources allocated to the session and other characteristics of the dispatched Slurm job. In most cases the defaults will be adequate (i.e, no need to specify an account, nodelist or reservation). 
 
 ![](images/remote-desktop.png)
 
-Once the session has started, a thumbnail of the running session
-appears in the Sessions list. EnginFrame will attempt to open the
-session automatically, but may be blocked by the browser. In that
-case, simply select the session thumbnail from the list, or use the
-"click here" link in the notification text.
+Once the session has started, a thumbnail of the running session appears in the Sessions list. EnginFrame will attempt to open the session automatically, but may be blocked by the browser. In that case, simply select the session thumbnail from the list, or use the "click here" link in the notification text.
 
 ![](images/session.png)
 
-With the Remote Desktop session running and open, you should be able
-to run standard Linux desktop applications, including 3d-accelerated
-OpenGL applications.
+With the Remote Desktop session running and open, you should be able to run standard Linux desktop applications, including 3d-accelerated OpenGL applications.
 
 ![](images/glxgears.png)
 
-#### Additional Resources
+### Additional Resources
 
 - [https://www.nice-software.com/products/enginframe](https://www.nice-software.com/products/enginframe)
 - [https://www.nice-software.com/products/dcv](https://www.nice-software.com/products/dcv)
 
 
-### Accessing the O2A Blanca node (command line, batch computing)
+## O2A Blanca compute node (command line, batch computing)
 
-#### Logging in
-##### Logging in from a Windows Machine
+### Logging in
+#### Logging in from a Windows Machine
 
 Logging in from a Windows machine requires the additional step of [installing the PuTTY ssh client](https://www.putty.org/) onto your local machine. This application allows users to connect to remote servers with the ssh protocol. Note that there are other ssh clients that allow Windows machines to connect to remote ssh servers; Research Computing recommends PuTTY for reliability and simplicity.
 
@@ -321,7 +262,7 @@ Logging in from a Windows machine requires the additional step of [installing th
     * Note that as a security feature, PuTTY does not display any text while you type your password
 
 
-##### Logging in from a Mac
+#### Logging in from a Mac
 
 Logging in with a Mac requires no extra installation on your local machine. Simply utilize the terminal application that is pre-installed with your operating system to access Research Computing resources. 
 
@@ -330,7 +271,7 @@ Logging in with a Mac requires no extra installation on your local machine. Simp
     * If you are logging in using Duo Push, type your Identikey password.  You will then receive an authentication request on the Duo app on your phone. Approve the request.
     * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](https://curc.readthedocs.io/en/latest/access/duo-2-factor-authentication.html).
 
-##### Logging in from Linux
+#### Logging in from Linux
 
 Much like with Macs, Linux machines require no additional setup to access Research Computing resources. Simply utilize the your Linux terminal to access Research Computing resources. 
 
@@ -340,15 +281,13 @@ Much like with Macs, Linux machines require no additional setup to access Resear
     * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request on the Duo app on your phone. Approve the request.
     * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](https://curc.readthedocs.io/en/latest/access/duo-2-factor-authentication.html).
 
-##### SSH host keys
+#### SSH host keys
 
 The first time you log into an RC login node you will be asked to verify the host key. You can refer to the keys published here to confirm that you are connecting to a valid RC login node.
 
-Note that each login node may support more than one type of key, but only one is used (or displayed) by your client at any given time.
+> **_NOTE:_** _Each login node may support more than one type of key, but only one is used (or displayed) by your client at any given time._
 
-#### Running jobs
-
-## Running applications with Jobs
+### Running jobs
 
 Because CURC computing resources are shared among many researchers, Research Computing manages usage of the system through jobs. **Jobs** are simply an allotment of resources that can be used to execute processes. Research Computing uses a program named the *Simple Linux Utility for Resource Management*, or **Slurm**, to create and manage jobs.
 
@@ -356,7 +295,7 @@ In order to run a program on the O2A partition on Blanca, you must request resou
 
 When you submit a batch job or an interactive job, it will be placed in a queue until resources are available. [A detailed guide on the Slurm queue and accounting tools can be found here.](https://curc.readthedocs.io/en/latest/running-jobs/slurm-commands.html)
 
-##### Batch Jobs
+#### Batch Jobs
 
 The primary method of running applications on Research Computing resources is through a batch job. A **batch job** is a job that runs on a compute node with little or no interaction with the users. You should use batch jobs for:
 
@@ -376,7 +315,7 @@ If no job script is provided then `sbatch` will take whatever commands follow as
 
 A detailed guide [on constructing and submitting Job scripts can be found here.](https://curc.readthedocs.io/en/latest/running-jobs/batch-jobs.html)
 
-##### Interactive Jobs
+#### Interactive Jobs
 
 Another method of running applications on Research Computing resources is through an interactive job. As the name would imply, an **interactive job** is a job that allows users to interact with requested resources in real time. Users can run applications, execute scripts, or run other commands directly on a compute node. Interactive jobs should be used for:
 
@@ -670,7 +609,7 @@ If you cannot submit jobs to the `blanca-o2a` partition, please email [rc-help@c
 
 The path to the O2A PetaLibrary allocation is `/pl/active/o2a`. You should be able to access this directory and its subdirectories by typing the full path from the command line, or (if using Globus), by typing the path into the "path" dialog box. If you encounter "permission denied" errors, it is likely you have not been added to the `odor2action` user group.  In this case, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and cc [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) and request to be added to `oder2action`
 
-# DEFINITIONS
+# GLOSSARY
 
 ### <a href="https://oit.colorado.edu/services/identity-access-management/identikey" target="_blank">IdentiKey</a>
 _An IdentiKey consists of a CU Boulder username and an IdentiKey password. An IdentiKey is the credential that uniquely identifies you to online services and campus computing facilities so that they may grant you access._
