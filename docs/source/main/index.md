@@ -335,9 +335,9 @@ The example above will submit an interactive job that will run a terminal sessio
 
 More details [on running Interactive Jobs can be found here.](https://curc.readthedocs.io/en/latest/running-jobs/interactive-jobs.html)
 
-# OTHER TOPICS
+# HOW DO I?...
 
-## Using Matlab on CURC
+## Use Matlab on CURC
 
 ### Overview
 
@@ -547,43 +547,16 @@ Hello World from process 3
 RC Matlab currently does not support parallelization across nodes,
 only across cores on one node.
 
-# GETTING HELP
+## Use a Jupyter Notebook on CURC
+### TBD
 
-## User support for CURC resources
-* contact [rc-help@colorado.edu](mailto:rc-help@colorado.edu)
-	* _note that in addition to email correspondence, we will gladly do Zoom consultations on request to help you get started, provide workflow assistance, or troubleshoot issues_
+## Use Rstudio on CURC
+### TBD
 
-## CURC main documentation
-* [https://curc.readthedocs.io](https://curc.readthedocs.io)
+## Transfer files to or from CURC
+### TBD
 
-## Odor2Action questions
-* contact [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) 
-
-# FAQ
-
-## I have a new phone and Duo isn't working
-
-You can add a new device to your duo account by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>.
-After a CU authorization page you will be directed to a Duo authentication page. **Ignore the Duo Push prompt and instead click "Settings":** 
-
-![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management1edit.png)
-
-In this settings side bar click "Add a new device.":
-
-![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management2edit.png)
-
-Duo will then try to authenticate your account by push notification to verify your identity. Cancel this push notifcation...  
-
-<!-- insert image here ![]() -->
-
-...and click on "Enter a Passcode", or "Call Me". 
-- If you select "Call Me" the simply recieve the call and press 1. 
-- If you select "Enter a passcode" then click "Text me new codes" and you will be sent a list of one time passwords. Type in any one of the codes and you will be authenticated. 
-Once you have verified your identity, follow the instructions provided by Duo to add your device.
-
-If you cannot authenticate your account, contact [rc-help@colorado.edu](mailto:rc-help@colorado.edu) for further assistance.
-
-## I can't access the O2A Blanca node
+## Access the O2A Blanca node
 
 To access the O2A Blanca node from a terminal on your laptop or desktop computer:
 
@@ -605,9 +578,35 @@ $ sbatch myjob.sh
 
 If you cannot submit jobs to the `blanca-o2a` partition, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and cc [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) and request to be added to `blanca-o2a`.
 
-## I can't access the O2A PetaLibrary allocation
+## Check how much disk space I have
+### TBD
+
+
+## Access the O2A PetaLibrary allocation
 
 The path to the O2A PetaLibrary allocation is `/pl/active/o2a`. You should be able to access this directory and its subdirectories by typing the full path from the command line, or (if using Globus), by typing the path into the "path" dialog box. If you encounter "permission denied" errors, it is likely you have not been added to the `odor2action` user group.  In this case, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and cc [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) and request to be added to `oder2action`
+
+## Port Duo to my new phone
+
+You can add a new device to your duo account by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>.
+After a CU authorization page you will be directed to a Duo authentication page. **Ignore the Duo Push prompt and instead click "Settings":** 
+
+![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management1edit.png)
+
+In this settings side bar click "Add a new device.":
+
+![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management2edit.png)
+
+Duo will then try to authenticate your account by push notification to verify your identity. Cancel this push notifcation...  
+
+<!-- insert image here ![]() -->
+
+...and click on "Enter a Passcode", or "Call Me". 
+- If you select "Call Me" the simply recieve the call and press 1. 
+- If you select "Enter a passcode" then click "Text me new codes" and you will be sent a list of one time passwords. Type in any one of the codes and you will be authenticated. 
+Once you have verified your identity, follow the instructions provided by Duo to add your device.
+
+If you cannot authenticate your account, contact [rc-help@colorado.edu](mailto:rc-help@colorado.edu) for further assistance.
 
 # GLOSSARY
 
@@ -635,4 +634,16 @@ _The CURC EnginFrame cluster provides a 3d-accelerated remote desktop environmen
 
 ### <a href="https://www.colorado.edu/rc/resources/jupyterhub" target="_blank">JupyterHub</a>
 _JupyterHub is a multi-user server for Jupyter (formerly known as IPython) notebooks. It provides a web service that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. CURC hosts a JupyterHub environment that enables researchers to utilize CURC-hosted storage and computing resources._
+
+# GETTING HELP
+
+## User support for CURC resources
+* contact [rc-help@colorado.edu](mailto:rc-help@colorado.edu)
+	* _note that in addition to email correspondence, we will gladly do Zoom consultations on request to help you get started, provide workflow assistance, or troubleshoot issues_
+
+## CURC main documentation
+* [https://curc.readthedocs.io](https://curc.readthedocs.io)
+
+## Odor2Action questions
+* contact [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) 
 

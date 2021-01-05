@@ -3,7 +3,7 @@ CURC documentation for Odor2Action users
  
 Welcome to the CU Boulder Research Computing (CURC) documentation for users affiliated with the Odor2Action project. CURC provides high performance computing and storage for Odor2Action.  
 
-The objective of this documentation is to help you get started using CURC resources. Recognizig that each user has unique needs, in addition to using this documentation we strongly encourage you to contact rc-help@colorado.edu to request a one-on-one Zoom consulation. Consultations are an efficient way to quickly spin-up on use of CURC resources.  We want you to have a great experience!
+The objective of this documentation is to help you get started using CURC resources. Each user has unique needs; therefore, in addition to using this documentation we strongly encourage you to contact rc-help@colorado.edu to request a one-on-one Zoom consulation. Consultations are an efficient way to quickly spin-up on the use of CURC resources.  We want you to have a great experience!
 
 ----
 
