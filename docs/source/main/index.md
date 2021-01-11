@@ -324,12 +324,33 @@ Unlike running an application on your personal machine, you do not call the appl
 Once you've created your job script it can be submitted to the Slurm queue with the `sbatch` command followed by your job script name:
 
 ```bash
+module load slurm/blanca
 sbatch <your-jobscript-name>
 ```
 
 If no job script is provided then `sbatch` will take whatever commands follow as standard input.
 
 For more advanced topics see our detailed guide on <a href="https://curc.readthedocs.io/en/latest/running-jobs/batch-jobs.html" target="_blank">constructing and submitting job scripts</a>.
+
+Here's an example job script to get you started:
+
+```bash
+#!/bin/bash
+
+#SBATCH --nodes=1
+#SBATCH --time=0:01:00
+#SBATCH --partition=blanca-curc
+#SBATCH --ntasks=1
+#SBATCH --job-name=myfirstjob
+#SBATCH --output=myfirstjob_%j.out
+
+module purge
+
+module load R/3.5.0
+
+echo "hello world"
+```
+
 
 #### Interactive Jobs
 
@@ -342,6 +363,7 @@ Another method of running applications on Research Computing resources is throug
 You can request an interactive job by using the `sinteractive`command. Unlike the `sbatch`, resources must be requested via the command line through the use of flags. Though running sinteractive without any flags is possible, this will result in default values being used for your jobs. Research Computing highly recommends you provide a `partition` and a `time` parameter to avoid long queue times or accidental overuse of your priority. 
 
 ```bash
+module load slurm/blanca
 sinteractive --partition=blanca-curc --time=00:10:00
 ```
 
