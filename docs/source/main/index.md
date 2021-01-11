@@ -103,7 +103,7 @@ Globus is a web-based service that enables quick and intuitive data transfer and
 
 ### Using Globus to Transfer Files
 
-<a href="https://www.globus.org/app/login" target="_blank">Sign into Globus</a> by
+<a href="https://app.globus.org" target="_blank">Sign into Globus</a> by
 selecting "University of Colorado at Boulder" from the dropdown menu
 and by logging in using your CU IdentiKey and password.
 
@@ -115,7 +115,7 @@ Files can easily be transferred to/from PetaLibrary or other CURC filesystems, f
 
 * _Step 2_: Your local computer must also have an Globus endpoint. Once logged into Globus (see above) you can do this by clicking on _"Endpoint"_ in the blue vertical menu bar on the left side of the screen. This will take you to the _Endpoints_ screen, and from here you can click on _"Create a personal endpoint"_ near the top of the screen and follow the steps provided.  Alternatiely, if you are not logged in to Globus you can navigate to the <a href="https://www.globus.org/globus-connect-personal" target="_blank">Globus Connect Personal</a> webpage and follow the steps provided to install a personal endpoint on your local machine. You'll be prompted to name the endpoint. Choose something intuitive and unique like _"John Doe's Macbook Pro"_.
 
-* _Step 3_: Once you have established your local endpoint, go back to <a href="https://www.globus.org/app/login" target="_blank">Globus</a> in your browser and connect your local workstation endpoint on the other half of the Globus "File Manager" screen (you can search for the name you gave your endpoint in the "Collection" field). Now you can transfer files between your local machine and CURC.   
+* _Step 3_: Once you have established your local endpoint, go back to <a href="https://app.globus.org" target="_blank">Globus</a> in your browser and connect your local workstation endpoint on the other half of the Globus "File Manager" screen (you can search for the name you gave your endpoint in the "Collection" field). Now you can transfer files between your local machine and CURC.   
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/june-updates/File-Transfers/globus-image-2new.PNG)
 
