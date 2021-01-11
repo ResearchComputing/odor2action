@@ -82,8 +82,9 @@ I am an Odor2Action user of CURC resources.  May I please be added to the follow
 
 1. crimaldigrp 
 2. blanca-o2a account
-3. ucb-general account
-4. Engineframe cluster
+3. blanca-curc account
+4. ucb-general account
+5. Engineframe cluster
 ```
 
 ___How long will it take?___ Such requests are generally fulfilled within 1-2 hours during M-F business hours. After hours or weekend requests may not be provisioned until the next business day.
@@ -94,7 +95,7 @@ Now that you have completed the Quick Start Guide for onboarding, you can [learn
 
 After completing Steps 1-3 above you will be able to login to CURC systems via a variety of _gateways_ depending on the resources you wish to access. Each gateway is described below. 
 
-## PetaLibrary (file transfer)
+## Globus (upload/download data)
 
 The O2A project has an allocation on <a href="https://www.colorado.edu/rc/resources/petalibrary" target="_blank">CURC PetaLibrary</a>, which is CURC's data storage and sharing platform. While there are numerous ways to transfer files to/from PetaLibrary, <a href="https://www.globus.org" target="_blank">Globus</a> is the recommended means of doing so. Users who prefer using command line methods for file transfers (e.g., _scp_, _sftp_ or _rsync_) may refer to the [CURC data transfer documentation](https://curc.readthedocs.io/en/latest/compute/data-transfer.html).
 
@@ -112,7 +113,9 @@ Files can easily be transferred to/from PetaLibrary or other CURC filesystems, f
 
 * _Step 1_: A Globus endpoint has already been established to connect you to CURC. You can connect to this endpoint by clicking the "Collection" field and searching for the endpoint: `CU Boulder Research Computing`. Log into the end point with your CU IdentiKey and password.
 
-* _Step 2_: Your local computer must also have an endpoint. You can easily set up a Globus endpoint by installing [Globus Connect Personal](https://www.globus.org/globus-connect-personal) on your local machine. Once you have established your local endpoint, go back to [Globus](https://www.globus.org/app/login) in your browser and connect your local workstation endpoint on the other half of the Globus "File Manager" screen (you can search for the name of your endpoint in the "Collection" field). Now you can tranfer files between your local machine and CURC.   
+* _Step 2_: Your local computer must also have an Globus endpoint. Once logged into Globus (see above) you can do this by clicking on _"Endpoint"_ in the blue vertical menu bar on the left side of the screen. This will take you to the _Endpoints_ screen, and from here you can click on _"Create a personal endpoint"_ near the top of the screen and follow the steps provided.  Alternatiely, if you are not logged in to Globus you can navigate to the [Globus Connect Personal](https://www.globus.org/globus-connect-personal) webpage and follow the steps provided to install a personal endpoint on your local machine. You'll be prompted to name the endpoint. Choose something intuitive and unique like _"John Doe's Macbook Pro"_.
+
+* _Step 3_: Once you have established your local endpoint, go back to [Globus](https://www.globus.org/app/login) in your browser and connect your local workstation endpoint on the other half of the Globus "File Manager" screen (you can search for the name you gave your endpoint in the "Collection" field). Now you can transfer files between your local machine and CURC.   
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/june-updates/File-Transfers/globus-image-2new.PNG)
 
@@ -138,7 +141,7 @@ CURC JupyterHub is available at [https://jupyter.rc.colorado.edu](https://jupyte
 
 ### Step 2: Start a notebook server
 
-To start a notebook server, select the `Blanca (12hr)` option in the *Select job profile* menu under *Spawner Options* and click *Spawn*. 
+To start a notebook server, select the `Summit interactive (12hr)` option in the *Select job profile* menu under *Spawner Options* and click *Spawn*. 
 
 The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC `/home` directory in the left menu bar. In the main work area on the right hand side you will see the "Launcher" and any other tabs you may have open from previous sessions.
 
@@ -236,9 +239,19 @@ Once the session has started, a thumbnail of the running session appears in the 
 
 ![](images/session.png)
 
-With the Remote Desktop session running and open, you should be able to run standard Linux desktop applications, including 3d-accelerated OpenGL applications.
+### Step 3: Use graphical software
 
-![](images/glxgears.png)
+With the Remote Desktop session running and open, you should be able to run standard Linux desktop applications that have a graphical user interface (GUI). A commonly-used example would be Matlab. To start the Matlab GUI, do the following:
+
+1. Open a terminal by clicking `Applications`-->`System Tools`-->`MATE Terminal`
+2. Load the Matlab software and start Matlab by typing:
+
+```bash
+module load matlab/2019b
+matlab
+```
+
+![](images/matlab_enginframe.png)
 
 ### Additional Resources
 
@@ -247,6 +260,8 @@ With the Remote Desktop session running and open, you should be able to run stan
 
 
 ## O2A Blanca compute node (command line, batch computing)
+
+For users with intensive computing needs that cannot be met by EngineFrame or JupyterHub, the O2A project has also purchased a compute node within the [CURC Blanca cluster](https://www.colorado.edu/rc/resources/blanca).  Blanca will be familiar to users accustomed to using linux-based high-performance computing resources. Blanca has about 200 compute nodes, each with between 16-40 cores.  Blanca may be useful for workflows comprised of 100s to 1000s of computing tasks (e.g., processing images), for running software that requires multiple cores ("parallelization"), or for running long, unattended computing tasks (up to 7 days). O2A users will have priority access to the Blanca O2A node, and preemptable access to the other ~200 nodes on Blanca. The Blanca cluster uses the [Slurm](https://slurm.schedmd.com/documentation.html) workload manager to schedule computing "jobs" on available resources among hundreds of users. CURC personnel can help you establish a new workflow on Blanca; just email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) to set up a Zoom consultation.    
 
 ### Logging in
 #### Logging in from a Windows Machine
@@ -326,12 +341,12 @@ Another method of running applications on Research Computing resources is throug
 You can request an interactive job by using the `sinteractive`command. Unlike the `sbatch`, resources must be requested via the command line through the use of flags. Though running sinteractive without any flags is possible, this will result in default values being used for your jobs. Research Computing highly recommends you provide a `partition` and a `time` parameter to avoid long queue times or accidental overuse of your priority. 
 
 ```bash
-sinteractive --partition=blanca-o2a --time=00:10:00
+sinteractive --partition=blanca-curc --time=00:10:00
 ```
 
 [A list of sinteractive parameters can be found here](https://curc.readthedocs.io/en/latest/running-jobs/job-resources.html)
 
-The example above will submit an interactive job that will run a terminal session on one core of one node with the Odor2Action partition (`blanca-o2a`) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
+The example above will submit an interactive job that will run a terminal session on one core of one node with the Odor2Action partition (`blanca-curc`) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
 
 More details [on running Interactive Jobs can be found here.](https://curc.readthedocs.io/en/latest/running-jobs/interactive-jobs.html)
 
@@ -351,7 +366,7 @@ software) on RC resources. The first is through an interactive job,
 and the second is through a batch job. An interactive job allows one
 to work in real-time with Matlab. Two reasons you may want to do this
 would be if you are actively debugging your code, or if you would like
-to use the GUI (in this instance, the Matlab Desktop). However, there
+to use the graphical user interface (GUI -- in this instance, the Matlab Desktop). However, there
 might be other reasons you would like to work interactively with
 Matlab.
 
@@ -365,33 +380,7 @@ below.
 ### Submitting Matlab Interactive Jobs
 
 Running Matlab interactive jobs on RC resources is both a simple and
-easy task to accomplish. In this section we will learn how to launch
-Matlab as an interactive job. 
-
-Begin by launching an interactive job from a CURC login node by loading slurm/blanca into
-your environment and running the `sinteractive` command.
-
-```bash
-module load slurm/blanca
-sinteractive
-```
-
-From here you will load the Matlab module into your environment.
-
-```bash
-module load matlab
-```
-
-Lastly we will run Matlab from the terminal.
-
-```bash
-matlab -nosplash
-```
-
-By default Matlab will load an interactive terminal session. If you would like to access the Matlab GUI 
-then simply run Matlab with X11 forwarding enabled, or start Matlab from a terminal within an EnginFrame session.
-
-To find out how you enable X11 forwarding in your terminal session, [check out our X11 forwarding tutorial here.](https://curc.readthedocs.io/en/latest/running-jobs/interactive-jobs.html#interactive-gui-applications)
+easy task to accomplish. Odor2Action users can run an interactive Matlab jobs using EnginFrame.  Documentation on starting an interactive session and launching Matlab can be found in the [Enginframe secion of this documentation](#enginframe-visualization-guis)
 
 ### Submitting Matlab Batch Jobs
 
@@ -423,7 +412,7 @@ which contains the following lines:
 
 #SBATCH --nodes=1
 #SBATCH --time=0:01:00
-#SBATCH --partition=blanca-o2a
+#SBATCH --partition=blanca-curc
 #SBATCH --ntasks=1
 #SBATCH --job-name=Matlab_Hello_World
 #SBATCH --output=Matlab_Hello_World.out
@@ -521,7 +510,7 @@ output file if we choose.
 
 #SBATCH --nodes=1
 #SBATCH --time=0:01:00
-#SBATCH --partition=blanca-o2a
+#SBATCH --partition=blanca-curc
 #SBATCH --ntasks=4
 #SBATCH --job-name=Matlab_Parallel_Hello
 #SBATCH --output=Matlab_Parallel_Hello.out
@@ -548,13 +537,18 @@ RC Matlab currently does not support parallelization across nodes,
 only across cores on one node.
 
 ## Use a Jupyter Notebook on CURC
-### TBD
+
+The CURC JupyterHub enables the use of Jupyter notebooks on CURC resources. To get started, follow the [documentation on using CURC JupyterHub](#jupyterhub-python-notebooks).
 
 ## Use Rstudio on CURC
-### TBD
+
+It is possible to use Rstudio on the CURC JupyterHub. Interested users can follow the [documentation on using CURC JupyterHub](#jupyterhub-python-notebooks), but instead of selecting the `Summit interactive (12hr)` option they should choose the `Summit interactive Rstudio (12hr)` option in the *Select job profile* menu under *Spawner Options* and click *Spawn*. 
 
 ## Transfer files to or from CURC
-### TBD
+
+The recommended method for transferring files to or from CURC is to use the Globus web-based service. To get started, follow the [documentation on using Globus](#using-globus-to-transfer-files)
+
+Users who prefer using command line methods for file transfers (e.g., _scp_, _sftp_ or _rsync_) may refer to the [CURC data transfer documentation](https://curc.readthedocs.io/en/latest/compute/data-transfer.html).
 
 ## Access the O2A Blanca node
 
@@ -569,18 +563,33 @@ $ ssh <IdentiKey>@login.rc.colorado.edu
 $ module load slurm/blanca
 
 # <now you can either start an interactive job or submit a batch job>.
-# start an interactive job (e.g.,. for a 1 hour job with 2 cores on blanca-o2a):
-$ sinteractive --time=01:00:00 --ntasks=2 --partition=blanca-o2a
+# start an interactive job (e.g.,. for a 1 hour job with 2 cores on blanca-curc):
+$ sinteractive --time=01:00:00 --ntasks=2 --partition=blanca-curc
 
 # or submit a batch job (assumes you have previously written a job script called 'myjob.sh'):
 $ sbatch myjob.sh
 ```
 
-If you cannot submit jobs to the `blanca-o2a` partition, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and cc [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) and request to be added to `blanca-o2a`.
+If you cannot submit jobs to the `blanca-curc` partition, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and cc [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) and request to be added to `blanca-curc`.
 
 ## Check how much disk space I have
-### TBD
 
+You have permanent personal storage space on two filesystems:
+* `/home/<your_username>`
+* `/projects/<your_username>`
+
+To see how much space is consumed and available, you can use the `curc-quota` command from a login node:
+
+```
+[johndoe@login11 ~]$ curc-quota
+------------------------------------------------------------------------
+                                       Used         Avail    Quota Limit
+------------------------------------------------------------------------
+/home/johndoe                         1.8G          262M           2.0G
+/projects/johndoe                     237G           14G           250G
+```
+
+> **_NOTE:_** _After the results for your `/home/` and `/projects` directories are shown, you may also see some error messages suggesting you login to a Summit scompile node. These messages refer to filesystems on Summit which can't be queried from a login nodes. They can be ignored._
 
 ## Access the O2A PetaLibrary allocation
 
@@ -588,7 +597,7 @@ The path to the O2A PetaLibrary allocation is `/pl/active/o2a`. You should be ab
 
 ## Port Duo to my new phone
 
-You can add a new device to your duo account by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>.
+If you get a new phone you will need to add the new device to your Duo accouht. You can do so by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>.
 After a CU authorization page you will be directed to a Duo authentication page. **Ignore the Duo Push prompt and instead click "Settings":** 
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management1edit.png)
