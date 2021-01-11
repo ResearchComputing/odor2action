@@ -97,13 +97,13 @@ After completing Steps 1-3 above you will be able to login to CURC systems via a
 
 ## Globus (upload/download data)
 
-The O2A project has an allocation on <a href="https://www.colorado.edu/rc/resources/petalibrary" target="_blank">CURC PetaLibrary</a>, which is CURC's data storage and sharing platform. While there are numerous ways to transfer files to/from PetaLibrary, <a href="https://www.globus.org" target="_blank">Globus</a> is the recommended means of doing so. Users who prefer using command line methods for file transfers (e.g., _scp_, _sftp_ or _rsync_) may refer to the [CURC data transfer documentation](https://curc.readthedocs.io/en/latest/compute/data-transfer.html).
+The O2A project has an allocation on <a href="https://www.colorado.edu/rc/resources/petalibrary" target="_blank">CURC PetaLibrary</a>, which is CURC's data storage and sharing platform. While there are numerous ways to transfer files to/from PetaLibrary, <a href="https://www.globus.org" target="_blank">Globus</a> is the recommended means of doing so. Users who prefer using command line methods for file transfers (e.g., _scp_, _sftp_ or _rsync_) may refer to the <a href="https://curc.readthedocs.io/en/latest/compute/data-transfer.html" target="_blank">CURC data transfer documentation</a>.
 
 Globus is a web-based service that enables quick and intuitive data transfer and sharing between _endpoints_. Globus addresses deficiencies in secure copy requests by automating large data transfers, resuming failed transfers, and simplifying the implementation of high performance transfers between computing centers. An "endpoint" is a Globus term referring to one of the two file transfer locations – either the source or the destination – between which files can move. Once a resource (server, cluster, storage system, laptop, or other system) is defined as an endpoint, it will be available to authorized users who can transfer files to or from this endpoint.
 
 ### Using Globus to Transfer Files
 
-[Sign into Globus](https://www.globus.org/app/login) by
+<a href="https://www.globus.org/app/login" target="_blank">Sign into Globus</a> by
 selecting "University of Colorado at Boulder" from the dropdown menu
 and by logging in using your CU IdentiKey and password.
 
@@ -113,9 +113,9 @@ Files can easily be transferred to/from PetaLibrary or other CURC filesystems, f
 
 * _Step 1_: A Globus endpoint has already been established to connect you to CURC. You can connect to this endpoint by clicking the "Collection" field and searching for the endpoint: `CU Boulder Research Computing`. Log into the end point with your CU IdentiKey and password.
 
-* _Step 2_: Your local computer must also have an Globus endpoint. Once logged into Globus (see above) you can do this by clicking on _"Endpoint"_ in the blue vertical menu bar on the left side of the screen. This will take you to the _Endpoints_ screen, and from here you can click on _"Create a personal endpoint"_ near the top of the screen and follow the steps provided.  Alternatiely, if you are not logged in to Globus you can navigate to the [Globus Connect Personal](https://www.globus.org/globus-connect-personal) webpage and follow the steps provided to install a personal endpoint on your local machine. You'll be prompted to name the endpoint. Choose something intuitive and unique like _"John Doe's Macbook Pro"_.
+* _Step 2_: Your local computer must also have an Globus endpoint. Once logged into Globus (see above) you can do this by clicking on _"Endpoint"_ in the blue vertical menu bar on the left side of the screen. This will take you to the _Endpoints_ screen, and from here you can click on _"Create a personal endpoint"_ near the top of the screen and follow the steps provided.  Alternatiely, if you are not logged in to Globus you can navigate to the <a href="https://www.globus.org/globus-connect-personal" target="_blank">Globus Connect Personal</a> webpage and follow the steps provided to install a personal endpoint on your local machine. You'll be prompted to name the endpoint. Choose something intuitive and unique like _"John Doe's Macbook Pro"_.
 
-* _Step 3_: Once you have established your local endpoint, go back to [Globus](https://www.globus.org/app/login) in your browser and connect your local workstation endpoint on the other half of the Globus "File Manager" screen (you can search for the name you gave your endpoint in the "Collection" field). Now you can transfer files between your local machine and CURC.   
+* _Step 3_: Once you have established your local endpoint, go back to <a href="https://www.globus.org/app/login" target="_blank">Globus</a> in your browser and connect your local workstation endpoint on the other half of the Globus "File Manager" screen (you can search for the name you gave your endpoint in the "Collection" field). Now you can transfer files between your local machine and CURC.   
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/june-updates/File-Transfers/globus-image-2new.PNG)
 
@@ -131,13 +131,13 @@ To setup a shared endpoint contact the O2A Project Manager at [Kathryn.Cochran@c
 
 ## JupyterHub (python notebooks)
 
-[Jupyter notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using _Python_, _R_, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text which provide an integrated enviornment to use, learn, and teach interactive data analysis.  
+<a href="https://jupyter.org/"  target="_blank">Jupyter notebooks</a> are an excellent resource for interactive development and data analysis using _Python_, _R_, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text which provide an integrated enviornment to use, learn, and teach interactive data analysis.  
 
-CU Research Computing (CURC) operates a [JupyterHub server](https://jupyterhub.readthedocs.org/en/latest/) that enables users to run Jupyter notebooks on Summit or Blanca for serial (single core) and shared-memory parallel (single node) workflows. The CURC JupyterHub uses the next-generation [JupyterLab](https://jupyterlab.readthedocs.io) user interface. The CURC JupyterHub runs atop of [Anaconda](http://anaconda.com).  Additional documentation on the [CURC Anaconda distribution](https://curc.readthedocs.io/en/latest/software/python.html) is available and may be a good pre-requisite for the following documentation outlining use of the CURC JupyterHub.
+CU Research Computing (CURC) operates a <a href="https://jupyterhub.readthedocs.org/en/latest/" target="_blank">JupyterHub server</a> that enables users to run Jupyter notebooks on Summit or Blanca for serial (single core) and shared-memory parallel (single node) workflows. The CURC JupyterHub uses the <a href="https://jupyterlab.readthedocs.io" target="_blank">JupyterLab</a> user interface. The CURC JupyterHub runs atop of <a href="http://anaconda.com" target="_blank">Anaconda</a>.  Additional documentation on the <a href="https://curc.readthedocs.io/en/latest/software/python.html" target="_blank">CURC Anaconda distribution</a> is available and may be a good pre-requisite for the following documentation outlining use of the CURC JupyterHub.
 
 ### Step 1: Log  in to CURC JupyterHub
 
-CURC JupyterHub is available at [https://jupyter.rc.colorado.edu](https://jupyter.rc.colorado.edu). To log in use your RC credentials. If you do not have an RC account, please [request an account before continuing.](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization)
+CURC JupyterHub is available at <a href="https://jupyter.rc.colorado.edu" target="_blank">https://jupyter.rc.colorado.edu</a>. To log in use your RC credentials. If you do not have an RC account, please <a href="https://rcamp.rc.colorado.edu/accounts/account-request/create/organization" target="_blank">request an account before continuing</a>.
 
 ### Step 2: Start a notebook server
 
@@ -151,7 +151,7 @@ The server will take a few moments to start.  When it does, you will be taken to
 
 ### Step 3: Navigating the JupyterLab Interface
 
-The following features are availabe in the [JupyterLab Interface](https://jupyterlab.readthedocs.io/en/stable/user/interface.html):
+The following features are available in the <a href="https://jupyterlab.readthedocs.io/en/stable/user/interface.html" target="_blank">Jupyterlab interface</a>:
 
 * _Left sidebar:_ Click on a tab to change what you see in the left menu bar.  Options include the file browser, a list of running kernels and terminals, a command palette, a notebook cell tools inspector, and a tabs list.
 * _Left menu bar:_ 
@@ -167,7 +167,7 @@ The following features are availabe in the [JupyterLab Interface](https://jupyte
       * ...and any other custom kernels you add on your own _(see the [section below](#creating-your-own-custom-jupyter-kernels) on creating your own custom kernels)._
    * Open a new console (command line) for any of the kernels.
    * Open other functions; the "Terminal" function is particularly useful, as it enables you to access the command line on the Summit or Blanca node your Jupyterhub job is currently running on. 
-* See Jupyter's [documentation on the JupyterLab Interface for additional information.](https://jupyterlab.readthedocs.io/en/stable/user/interface.html)
+* See Jupyter's <a href="https://jupyterlab.readthedocs.io/en/stable/user/interface.html" target="_blank">documentation on the JupyterLab interface for additional information</a>.
 
 #### Tip for finding the packages available to you within a notebook
 
@@ -183,7 +183,7 @@ If the packages you need are not available, [you can create your own custom envi
     
 #### For users who prefer the "old school" classic Jupyter interface in favor of JupyterLab
 
-You can access the Jupyter classic view by going to the address bar at the top of your broswer and changing "lab" to "tree" in the URL.  For, example, if your session URL is https://jupyter.rc.colorado.edu/user/janedoe/lab, you can change this to https://jupyter.rc.colorado.edu/user/janedoe/tree . 
+You can access the Jupyter classic view by going to the address bar at the top of your broswer and changing "lab" to "tree" in the URL.  For, example, if your session URL is `https://jupyter.rc.colorado.edu/user/janedoe/lab`, you can change this to `https://jupyter.rc.colorado.edu/user/janedoe/tree`. 
 
 ### Step 4: Shut down a Notebook Server
 
@@ -196,8 +196,8 @@ Using the `Logout` button will log you out of CURC JupyterHub.  It will not shut
 ### Additional Documentation
 
 Users frequently need to build custom Anaconda environments that contain specific packages they need. The topics below will help you create your own environment and enable it for use in CURC JupyterHub.
-- [Create your own custom conda environment using the CURC Anaconda distribution](https://curc.readthedocs.io/en/latest/software/python.html#create-your-own-custom-environment)
-- [Create a Jupyter kernel to enable use of your custom conda environment in CURC JupyterHub](https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html#creating-your-own-custom-jupyter-kernels)
+- <a href="https://curc.readthedocs.io/en/latest/software/python.html#create-your-own-custom-environment" target="_blank">Create your own custom conda environment using the CURC Anaconda distribution</a>
+- <a href="https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html#creating-your-own-custom-jupyter-kernels" target="_blank">Create a Jupyter kernel to enable use of your custom conda environment in CURC JupyterHub</a>
 
 ## EnginFrame (visualization, GUIs)
 
@@ -206,14 +206,14 @@ NICE EnginFrame provides a 3d-accelerated remote desktop environment on an Nvidi
 
 ### Step 1: Login to EnginFrame
 
-> **_NOTE 1:_** _You'll need to be on the CU VPN to network to use EnginFrame. If you already have a VPN client on your machine you can connect to `vpn.colorado.edu` through that (login credentials are your CU IdentiKey and password). If you don't have a VPN client on your machine, you can [download one from the CU Office of Information Technology](https://oit.colorado.edu/services/network-internet-services/vpn/help)._ 
+> **_NOTE 1:_** _You'll need to be on the CU VPN to network to use EnginFrame. If you already have a VPN client on your machine you can connect to `vpn.colorado.edu` through that (login credentials are your CU IdentiKey and password). If you don't have a VPN client on your machine, you can <a href="https://oit.colorado.edu/services/network-internet-services/vpn/help" target="_blank">download one from the CU Office of Information Technology</a>._ 
 
 > **_NOTE 2:_** _You should have previously received access to EnginFrame when you [requested access to O2A resources](#step-4-request-access-to-o2a-resources). However, if you find you cannot login per the documentation below, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) to request access._
 
 In your web browser, navigate to the CURC EnginFrame instance at
-[https://viz.rc.colorado.edu/](https://viz.rc.colorado.edu/).
+<a href="https://viz.rc.colorado.edu" target="_blank">https://viz.rc.colorado.edu</a>.
 
-From the welcome page, select "Views" from the available interfaces (or use [this direct link](https://viz.rc.colorado.edu/enginframe/vdi/vdi.xml)).
+From the welcome page, select "Views" from the available interfaces (or use <a href="https://viz.rc.colorado.edu/enginframe/vdi/vdi.xml" target="_blank">this direct link</a>).
 
 ![](images/welcome.png)
 
@@ -255,25 +255,25 @@ matlab
 
 ### Additional Resources
 
-- [https://www.nice-software.com/products/enginframe](https://www.nice-software.com/products/enginframe)
-- [https://www.nice-software.com/products/dcv](https://www.nice-software.com/products/dcv)
+- <a href="https://www.nice-software.com/products/enginframe" target="_blank">https://www.nice-software.com/products/enginframe</a>
+- <a href="https://www.nice-software.com/products/dcv" target="_blank">https://www.nice-software.com/products/dcv</a>
 
 
 ## O2A Blanca compute node (command line, batch computing)
 
-For users with intensive computing needs that cannot be met by EngineFrame or JupyterHub, the O2A project has also purchased a compute node within the [CURC Blanca cluster](https://www.colorado.edu/rc/resources/blanca).  Blanca will be familiar to users accustomed to using linux-based high-performance computing resources. Blanca has about 200 compute nodes, each with between 16-40 cores.  Blanca may be useful for workflows comprised of 100s to 1000s of computing tasks (e.g., processing images), for running software that requires multiple cores ("parallelization"), or for running long, unattended computing tasks (up to 7 days). O2A users will have priority access to the Blanca O2A node, and preemptable access to the other ~200 nodes on Blanca. The Blanca cluster uses the [Slurm](https://slurm.schedmd.com/documentation.html) workload manager to schedule computing "jobs" on available resources among hundreds of users. CURC personnel can help you establish a new workflow on Blanca; just email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) to set up a Zoom consultation.    
+For users with intensive computing needs that cannot be met by EngineFrame or JupyterHub, the O2A project has also purchased a compute node within the <a href="https://www.colorado.edu/rc/resources/blanca" target="_blank">CURC Blanca cluster</a>.  Blanca will be familiar to users accustomed to using linux-based high-performance computing resources. Blanca has about 200 compute nodes, each with between 16-40 cores.  Blanca may be useful for workflows comprised of 100s to 1000s of computing tasks (e.g., processing images), for running software that requires multiple cores ("parallelization"), or for running long, unattended computing tasks (up to 7 days). O2A users will have priority access to the Blanca O2A node, and preemptable access to the other ~200 nodes on Blanca. The Blanca cluster uses the <a href="https://slurm.schedmd.com/documentation.html" target="_blank">Slurm</a> workload manager to schedule computing "jobs" on available resources among hundreds of users. CURC personnel can help you establish a new workflow on Blanca; just email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) to set up a Zoom consultation.    
 
 ### Logging in
 #### Logging in from a Windows Machine
 
-Logging in from a Windows machine requires the additional step of [installing the PuTTY ssh client](https://www.putty.org/) onto your local machine. This application allows users to connect to remote servers with the ssh protocol. Note that there are other ssh clients that allow Windows machines to connect to remote ssh servers; Research Computing recommends PuTTY for reliability and simplicity.
+Logging in from a Windows machine requires the additional step of <a href="https://www.putty.org/" target="_blank">installing the PuTTY ssh client</a> onto your local machine. This application allows users to connect to remote servers with the ssh protocol. Note that there are other ssh clients that allow Windows machines to connect to remote ssh servers; Research Computing recommends PuTTY for reliability and simplicity.
 
 1. Open the PuTTY application on your computer
     * Under “Host Name (or IP address)”, enter `login.rc.colorado.edu`. Select “SSH” as the connection type. Click on “Open”.
 2. Enter your Identikey in response to the “login as” prompt
 3. When prompted to enter your password:
     * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request from the Duo app on your phone. Approve the request.
-    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](https://curc.readthedocs.io/en/latest/access/duo-2-factor-authentication.html).
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be <a href="https://curc.readthedocs.io/en/latest/access/duo-2-factor-authentication.html" target="_blank">found here</a>.
     * Note that as a security feature, PuTTY does not display any text while you type your password
 
 
@@ -284,7 +284,7 @@ Logging in with a Mac requires no extra installation on your local machine. Simp
 1. Under “File”, open a new finder window. Navigate to the “Applications” folder, then the “Utilities” folder. Open a terminal window and type `ssh username@login.rc.colorado.edu`, where `username` is your assigned username. Press enter.
 2. Enter your password:
     * If you are logging in using Duo Push, type your Identikey password.  You will then receive an authentication request on the Duo app on your phone. Approve the request.
-    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](https://curc.readthedocs.io/en/latest/access/duo-2-factor-authentication.html).
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be <a href="https://curc.readthedocs.io/en/latest/access/duo-2-factor-authentication.html" target="_blank">found here</a>.
 
 #### Logging in from Linux
 
@@ -294,7 +294,7 @@ Much like with Macs, Linux machines require no additional setup to access Resear
 
 2. Enter your password:
     * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request on the Duo app on your phone. Approve the request.
-    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](https://curc.readthedocs.io/en/latest/access/duo-2-factor-authentication.html).
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be <a href="https://curc.readthedocs.io/en/latest/access/duo-2-factor-authentication.html" target="_blank">found here</a>.
 
 #### SSH host keys
 
@@ -306,9 +306,9 @@ The first time you log into an RC login node you will be asked to verify the hos
 
 Because CURC computing resources are shared among many researchers, Research Computing manages usage of the system through jobs. **Jobs** are simply an allotment of resources that can be used to execute processes. Research Computing uses a program named the *Simple Linux Utility for Resource Management*, or **Slurm**, to create and manage jobs.
 
-In order to run a program on the O2A partition on Blanca, you must request resources from Slurm to generate a job. Resources can be requested from a login node or a compile node. You must then provide commands to run your program on those requested resources. Where you provide you commands depends on whether you are running a [batch job](https://curc.readthedocs.io/en/latest/running-jobs/batch-jobs.html) or an [interactive job](https://curc.readthedocs.io/en/latest/running-jobs/interactive-jobs.html).
+In order to run a program on the O2A partition on Blanca, you must request resources from Slurm to generate a job. Resources can be requested from a login node or a compile node. You must then provide commands to run your program on those requested resources. Where you provide you commands depends on whether you are running a <a href="https://curc.readthedocs.io/en/latest/running-jobs/batch-jobs.html" target="_blank">batch job</a> or an <a href="https://curc.readthedocs.io/en/latest/running-jobs/interactive-jobs.html" target="_blank">interactive job</a>
 
-When you submit a batch job or an interactive job, it will be placed in a queue until resources are available. [A detailed guide on the Slurm queue and accounting tools can be found here.](https://curc.readthedocs.io/en/latest/running-jobs/slurm-commands.html)
+When you submit a batch job or an interactive job, it will be placed in a queue until resources are available. Additional details can be found in the <a href="https://curc.readthedocs.io/en/latest/running-jobs/slurm-commands.html" target="_blank">documentation on Slurm queue and accounting tools</a>.
 
 #### Batch Jobs
 
@@ -328,7 +328,7 @@ sbatch <your-jobscript-name>
 
 If no job script is provided then `sbatch` will take whatever commands follow as standard input.
 
-A detailed guide [on constructing and submitting Job scripts can be found here.](https://curc.readthedocs.io/en/latest/running-jobs/batch-jobs.html)
+For more advanced topics see our detailed guide on <a href="https://curc.readthedocs.io/en/latest/running-jobs/batch-jobs.html" target="_blank">constructing and submitting job scripts</a>.
 
 #### Interactive Jobs
 
@@ -336,7 +336,7 @@ Another method of running applications on Research Computing resources is throug
 
 - Debugging applications or workflows
 - Any application that requires user input at runtime
-- Any application with a GUI (Graphical User Interface)
+- Any application with a GUI (graphical user interface)
 
 You can request an interactive job by using the `sinteractive`command. Unlike the `sbatch`, resources must be requested via the command line through the use of flags. Though running sinteractive without any flags is possible, this will result in default values being used for your jobs. Research Computing highly recommends you provide a `partition` and a `time` parameter to avoid long queue times or accidental overuse of your priority. 
 
@@ -344,11 +344,11 @@ You can request an interactive job by using the `sinteractive`command. Unlike th
 sinteractive --partition=blanca-curc --time=00:10:00
 ```
 
-[A list of sinteractive parameters can be found here](https://curc.readthedocs.io/en/latest/running-jobs/job-resources.html)
+For additional details see our <a href="https://curc.readthedocs.io/en/latest/running-jobs/job-resources.html" target="_blank">list of sinteractive parameters</a>.
 
 The example above will submit an interactive job that will run a terminal session on one core of one node with the Odor2Action partition (`blanca-curc`) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
 
-More details [on running Interactive Jobs can be found here.](https://curc.readthedocs.io/en/latest/running-jobs/interactive-jobs.html)
+Our main documentation has additional details <a href="https://curc.readthedocs.io/en/latest/running-jobs/interactive-jobs.html>on running Interactive jobs</a>.
 
 # HOW DO I?...
 
@@ -435,9 +435,7 @@ This file has a few basic parts:
    by bash, but will be read by Slurm. Of particular note is the
    `--output` parameter which specifies the file where stderr and
    stdout (including the output from our Matlab script) will be
-   written. For a description of the Slurm parameters, [please see the
-   general Slurm documentation
-   here](https://slurm.schedmd.com/sbatch.html)
+   written. For a description of the Slurm parameters, [please see the <a href="https://slurm.schedmd.com/sbatch.html" target="_blank">general Slurm documentation</a>.
 
 3. The lines beginning with `module purge` remove any unneeded
    software and ensure that the appropriate Matlab module is loaded on
@@ -548,7 +546,7 @@ It is possible to use Rstudio on the CURC JupyterHub. Interested users can follo
 
 The recommended method for transferring files to or from CURC is to use the Globus web-based service. To get started, follow the [documentation on using Globus](#using-globus-to-transfer-files)
 
-Users who prefer using command line methods for file transfers (e.g., _scp_, _sftp_ or _rsync_) may refer to the [CURC data transfer documentation](https://curc.readthedocs.io/en/latest/compute/data-transfer.html).
+Users who prefer using command line methods for file transfers (e.g., _scp_, _sftp_ or _rsync_) may refer to the <a href="https://curc.readthedocs.io/en/latest/compute/data-transfer.html" target="_blank">CURC data transfer documentation</a>
 
 ## Access the O2A Blanca node
 
