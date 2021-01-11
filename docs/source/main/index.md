@@ -164,7 +164,8 @@ The following features are available in the <a href="https://jupyterlab.readthed
       * __Python 3 (idp)__: Python3 notebook (Intel Python distribution)
       * __Bash__: BASH notebook
       * __R__: R notebook 
-      * ...and any other custom kernels you add on your own _(see the [section below](#creating-your-own-custom-jupyter-kernels) on creating your own custom kernels)._
+      * ...and any other custom kernels you add on your own _(see our main documentation for details on 
+<a href="https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html#creating-your-own-custom-jupyter-kernels" target="_blank">creating your own custom kernels</a>)._
    * Open a new console (command line) for any of the kernels.
    * Open other functions; the "Terminal" function is particularly useful, as it enables you to access the command line on the Summit or Blanca node your Jupyterhub job is currently running on. 
 * See Jupyter's <a href="https://jupyterlab.readthedocs.io/en/stable/user/interface.html" target="_blank">documentation on the JupyterLab interface for additional information</a>.
