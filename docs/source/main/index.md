@@ -596,8 +596,8 @@ If you cannot submit jobs to the `blanca-curc` partition, please email [rc-help@
 ## Check how much disk space I have
 
 You have permanent personal storage space on two filesystems:
-* `/home/<your_username>`
-* `/projects/<your_username>`
+* `/home/<your_username>` (2 GB)
+* `/projects/<your_username>` (250 GB)
 
 To see how much space is consumed and available, you can use the `curc-quota` command from a login node:
 
