@@ -207,7 +207,7 @@ NICE EnginFrame provides a 3d-accelerated remote desktop environment on an Nvidi
 
 ### Step 1: Login to EnginFrame
 
-> **_NOTE 1:_** _You'll need to be on the CU VPN to network to use EnginFrame. If you already have a VPN client on your machine you can connect to `vpn.colorado.edu` through that (login credentials are your CU IdentiKey and password). If you don't have a VPN client on your machine, you can <a href="https://oit.colorado.edu/services/network-internet-services/vpn/help" target="_blank">download one from the CU Office of Information Technology</a>._ 
+> **_NOTE 1:_** _You'll need to be on the CU Virtual Private Network (VPN) use EnginFrame. If you already have a VPN client on your machine you can connect to `vpn.colorado.edu` through that (login credentials are your CU IdentiKey and password). If you don't have a VPN client on your machine, you can <a href="https://oit.colorado.edu/services/network-internet-services/vpn/help" target="_blank">download one from the CU Office of Information Technology</a>._ 
 
 > **_NOTE 2:_** _You should have previously received access to EnginFrame when you [requested access to O2A resources](#step-4-request-access-to-o2a-resources). However, if you find you cannot login per the documentation below, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) to request access._
 
