@@ -675,7 +675,7 @@ _JupyterHub is a multi-user server for Jupyter (formerly known as IPython) noteb
 * [https://curc.readthedocs.io](https://curc.readthedocs.io)
 
 ## CURC status page (service alerts)
-* [https://curc.statuspage.io](https://curc.statuspage.io) _Note: at this link you can sign up to receive service alerts by email. We highly recommend doing so that you be notified of service interruptions._
+* [https://curc.statuspage.io](https://curc.statuspage.io) _Note: at this link you can sign up to receive service alerts by email. We highly recommend doing so in order to be notified of service interruptions._
 
 ## Odor2Action questions
 * contact [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) 
