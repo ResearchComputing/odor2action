@@ -82,9 +82,8 @@ I am an Odor2Action user of CURC resources.  May I please be added to the follow
 
 1. crimaldigrp 
 2. blanca-o2a account
-3. blanca-curc account
-4. ucb-general account
-5. Engineframe cluster
+3. ucb-general account
+4. Engineframe cluster
 ```
 
 ___How long will it take?___ Such requests are generally fulfilled within 1-2 hours during M-F business hours. After hours or weekend requests may not be provisioned until the next business day.
@@ -339,7 +338,7 @@ Here's an example job script to get you started:
 
 #SBATCH --nodes=1
 #SBATCH --time=0:01:00
-#SBATCH --partition=blanca-curc
+#SBATCH --partition=blanca-o2a
 #SBATCH --ntasks=1
 #SBATCH --job-name=myfirstjob
 #SBATCH --output=myfirstjob_%j.out
@@ -364,12 +363,12 @@ You can request an interactive job by using the `sinteractive`command. Unlike th
 
 ```bash
 module load slurm/blanca
-sinteractive --partition=blanca-curc --time=00:10:00
+sinteractive --partition=blanca-o2a --time=00:10:00
 ```
 
 For additional details see our <a href="https://curc.readthedocs.io/en/latest/running-jobs/job-resources.html" target="_blank">list of sinteractive parameters</a>.
 
-The example above will submit an interactive job that will run a terminal session on one core of one node with the Odor2Action partition (`blanca-curc`) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
+The example above will submit an interactive job that will run a terminal session on one core of one node with the Odor2Action partition (`blanca-o2a`) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
 
 Our main documentation has additional details <a href="https://curc.readthedocs.io/en/latest/running-jobs/interactive-jobs.html>on running Interactive jobs</a>.
 
@@ -435,7 +434,7 @@ which contains the following lines:
 
 #SBATCH --nodes=1
 #SBATCH --time=0:01:00
-#SBATCH --partition=blanca-curc
+#SBATCH --partition=blanca-o2a
 #SBATCH --ntasks=1
 #SBATCH --job-name=Matlab_Hello_World
 #SBATCH --output=Matlab_Hello_World.out
@@ -531,7 +530,7 @@ output file if we choose.
 
 #SBATCH --nodes=1
 #SBATCH --time=0:01:00
-#SBATCH --partition=blanca-curc
+#SBATCH --partition=blanca-o2a
 #SBATCH --ntasks=4
 #SBATCH --job-name=Matlab_Parallel_Hello
 #SBATCH --output=Matlab_Parallel_Hello.out
@@ -584,14 +583,14 @@ $ ssh <IdentiKey>@login.rc.colorado.edu
 $ module load slurm/blanca
 
 # <now you can either start an interactive job or submit a batch job>.
-# start an interactive job (e.g.,. for a 1 hour job with 2 cores on blanca-curc):
-$ sinteractive --time=01:00:00 --ntasks=2 --partition=blanca-curc
+# start an interactive job (e.g.,. for a 1 hour job with 2 cores on blanca-o2a):
+$ sinteractive --time=01:00:00 --ntasks=2 --partition=blanca-o2a
 
 # or submit a batch job (assumes you have previously written a job script called 'myjob.sh'):
 $ sbatch myjob.sh
 ```
 
-If you cannot submit jobs to the `blanca-curc` partition, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and cc [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) and request to be added to `blanca-curc`.
+If you cannot submit jobs to the `blanca-o2a` partition, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and cc [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) and request to be added to `blanca-o2a`.
 
 ## Check how much disk space I have
 
