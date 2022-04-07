@@ -15,7 +15,7 @@ The following schematic may be useful for visualizing CURC resources:
 
 1. The dedicated O2A compute node on the `Blanca condo cluster <https://www.colorado.edu/rc/resources/blanca>`_ (most computing tasks) 
 2. Shared computing nodes on the `RMACC Summit supercomputer <https://www.colorado.edu/rc/resources/summit>`_ or the `Alpine supercomputer <https://curc.readthedocs.io/en/latest/clusters/alpine.html>`_  (very big computing tasks)
-3. The `CURC visualization cluster via Open OnDemand <hhttps://curc.readthedocs.io/en/latest/gateways/OnDemand.html>`_ (A 3d-accelerated remote deskotp environment on GPU nodes for visualizing images & using software requiring a graphical user interface, or "GUI")
+3. The `CURC visualization cluster via EnginFrame <https://curc.readthedocs.io/en/latest/gateways/enginframe.html>`_ (A 3d-accelerated remote deskotp environment on GPU nodes for visualizing images & using software requiring a graphical user interface, or "GUI")
 4. The `CURC PetaLibrary <https://www.colorado.edu/rc/resources/petalibrary>`_ (storage of O2A datasets)
 5. The `CUmulus on-premise cloud system <https://www.colorado.edu/rc/resources/CUmulus>`_ (spin up your own virtual machine)
 
@@ -23,9 +23,10 @@ The following schematic may be useful for visualizing CURC resources:
 
 1. Via the command line (Access to Blanca or Summit for batch computing, or PetaLibrary for data transfer)
 2. Via the `CURC JupyterHub <https://www.colorado.edu/rc/resources/jupyterhub>`_ (Access to Blanca or Summit to run iPython notebooks)
-3. Via `CURC Open OnDemand <https://www.colorado.edu/rc/resources/enginframe>`_ (Access to the visualization cluster)
+3. Via `CURC EnginFrame <https://www.colorado.edu/rc/resources/enginframe>`_ (Access to the visualization cluster)
 4. Via `Globus <https://www.globus.org>`_ (transfer files to/from PetaLibrary or other CURC filesystems)
 5. Via `CUmulus web portal <https://curc.readthedocs.io/en/latest/cloud/cumulus.html>`_ (Access to the CUmulus cloud system)
+6. Via `CURC Open OnDemand <https://curc.readthedocs.io/en/latest/gateways/OnDemand.html>`_ (Currently in _beta_: access to most services via desktop)
 
 See the `Quick Start Guide <main/index.html#span-style-color-green-quick-start-guide-span>`_ to get a CURC account and request access to resources.
 
