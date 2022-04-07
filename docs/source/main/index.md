@@ -126,7 +126,7 @@ You can now use the "Path" field to navigate to the O2A PetaLibrary allocation. 
 ### Sharing data with Globus Shared Endpoints
 With Globus you can share files with users outside of CU who do not have CURC accounts by creating shared endpoints. You can share any file/folder that you have access to.  The user you are sharing with must have a Globus account (these are freely available to anyone).
 
-To setup a shared endpoint contact the O2A Project Manager at [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu]. 
+To setup a shared endpoint contact the O2A Project Manager at [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu). 
 
 ## JupyterHub (python notebooks)
 
@@ -402,7 +402,9 @@ below.
 ### Submitting Matlab Interactive Jobs
 
 Running Matlab interactive jobs on RC resources is both a simple and
-easy task to accomplish. Odor2Action users can run an interactive Matlab jobs using EnginFrame.  Documentation on starting an interactive session and launching Matlab can be found in the [Enginframe secion of this documentation](#enginframe-visualization-guis)
+easy task to accomplish. Odor2Action users can run an interactive Matlab jobs using EnginFrame.  Documentation on starting an interactive session and launching Matlab can be found in the [Enginframe secion of this documentation](#enginframe-visualization-guis). Note that EnginFrame will be retired at the end of 2022.  
+	
+> **_NOTE:_** _CURC is developing a new, more functional service to replace EnginFrame called __Open Ondemand__. Although CURC is still developing features, this service can be accessed now. See <a href="https://viz.rc.colorado.edu" target="_blank">CURC Open OnDemand</a> for documentation._
 
 ### Submitting Matlab Batch Jobs
 
@@ -591,6 +593,52 @@ $ sbatch myjob.sh
 ```
 
 If you cannot submit jobs to the `blanca-o2a` partition, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and cc [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) and request to be added to `blanca-o2a`.
+	
+## Access a Summit node
+
+Summit has 450 general compute nodes, each with 24 cores, and may be an alternative to the Blanca O2A partition if you have lots of work that requires additional computing resources. Summit will be retired near the end of 2022 or early 2023. To access a Summit node:
+
+```bash
+# first login:
+$ ssh <IdentiKey>@login.rc.colorado.edu
+# <type password and accept duo push to your phone to login>
+
+# Now once you are on a CURC login node, load the slurm job manager for Summit
+$ module load slurm/summit
+
+# <now you can either start an interactive job or submit a batch job>.
+# start an interactive job (e.g.,. for a 1 hour job with 2 cores on blanca-o2a):
+$ sinteractive --time=01:00:00 --ntasks=2 --partition=shas
+
+# or submit a batch job (assumes you have previously written a job script called 'myjob.sh' that has the "--partition=shas" flag):
+$ sbatch myjob.sh
+```
+
+If you cannot submit jobs to the Summit `shas` partition, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and cc [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) and request to be added to `ucb-general` on Summit.
+	
+## Access an Alpine node
+
+Alpine is CURC's newest supercomputer and will be available to all users beginning in late April 2022. Alpine Phase 1 has 64 general compute nodes, each with 64 cores, as well as 16 GPU nodes, each with 3 GPUs (a mix of NVIDIA A100 and AMD MI100). Alpine may be an alternative to the Blanca O2A partition if you have lots of work that requires additional computing resources. To access an Alpine node:
+
+```bash
+# first login:
+$ ssh <IdentiKey>@login.rc.colorado.edu
+# <type password and accept duo push to your phone to login>
+
+# Now once you are on a CURC login node, load the slurm job manager for Alpine
+$ module load slurm/alpine
+
+# <now you can either start an interactive job or submit a batch job>.
+# start an interactive job (e.g.,. for a 1 hour job with 2 cores on blanca-o2a):
+$ sinteractive --time=01:00:00 --ntasks=2 --partition=amilan-ucb
+
+# or submit a batch job (assumes you have previously written a job script called 'myjob.sh' that has the "--partition=amilan-ucb" flag):
+$ sbatch myjob.sh
+	
+# note that "amilan-ucb" is the Alpine CPU partition. You can also schedule jobs to the gpu partitions by specifying "--partition=aa100-ucb" (NVIDIA A100 GPUs) or "--partition=ami100-ucb" (AMD MI100 GPUs). 
+```
+
+If you cannot submit jobs to the Alpine partitions, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and cc [Kathryn.Cochran@colorado.edu](mailto:Kathryn.Cochran@colorado.edu) and request to be added to `ucb-general` on Alpine.
 
 ## Check how much disk space I have
 
@@ -609,7 +657,9 @@ To see how much space is consumed and available, you can use the `curc-quota` co
 /projects/johndoe                     237G           14G           250G
 ```
 
-> **_NOTE:_** _After the results for your `/home/` and `/projects` directories are shown, you may also see some error messages suggesting you login to a Summit scompile node. These messages refer to filesystems on Summit which can't be queried from a login nodes. They can be ignored._
+> **_NOTE1:_** _After the results for your `/home/` and `/projects` directories are shown, you may also see some error messages suggesting you login to a Summit scompile node. These messages refer to filesystems on Summit which can't be queried from a login nodes. They can be ignored._
+	
+> **_NOTE2:_** _You also have large "scratch" spaces available on Blanca (`/rc_scratch/$USER`), Summit (`/scratch/summit/$USER`) and Alpine (`/scratch/alpine/$USER`).  These spaces can be used for file input/output during jobs.  Files on scratch spaces are purged 90 days after the date of creation, so make sure you copy any files you want to keep to a permanent space when finished, such as your `/projects/$USER` direcory or `/pl/active/o2a`._
 
 ## Access the O2A PetaLibrary allocation
 
@@ -643,7 +693,10 @@ If you cannot authenticate your account, contact [rc-help@colorado.edu](mailto:r
 _An IdentiKey consists of a CU Boulder username and an IdentiKey password. An IdentiKey is the credential that uniquely identifies you to online services and campus computing facilities so that they may grant you access._
 
 ### <a href="https://www.colorado.edu/rc/resources/summit" target="_blank">RMACC Summit</a>
-_An NSF-funded supercomputer operated by CURC and freely available to CU users and affiliates._
+_An NSF-funded supercomputer operated by CURC and freely available to CU users and affiliates. Summit will retire in late 2022 or early 2023._
+	
+### <a href="https://curc.readthedocs.io/en/latest/clusters/alpine.html" target="_blank">Alpine</a>
+_A colloboratively-funded supercomputer operated by CURC and freely available to CU users and affiliates. Alpine replaces Summit and will be available to users in April 2022._
 
 ### <a href="https://www.colorado.edu/rc/resources/blanca" target="_blank">Blanca</a>
 _The CURC condo computing service "Blanca" offers researchers the opportunity to purchase and own compute nodes that will be operated as part of a shared cluster. The aggregate cluster is made available to all condo partners while maintaining priority for the owner of each node. Odor2Action owns a Blanca node for use by O2A affiliates._
@@ -659,10 +712,19 @@ _An "endpoint" is a Globus term referring to one of the two file transfer locati
 
 ### <a href="https://www.colorado.edu/rc/resources/enginframe" target="_blank">EnginFrame cluster</a>
 
-_The CURC EnginFrame cluster provides a 3d-accelerated remote desktop environment on an Nvidia GPU-equipped compute node hosted by CURC. Coupled with the proprietary Desktop Cloud Visualization (DCV) VNC server, the CURC EnginFrame supports the use of common visualization applications in a typical desktop environment (e.g. Matlab, Rstudio) using only a web browser._
+_The CURC EnginFrame cluster provides a 3d-accelerated remote desktop environment on an Nvidia GPU-equipped compute node hosted by CURC. Coupled with the proprietary Desktop Cloud Visualization (DCV) VNC server, the CURC EnginFrame supports the use of common visualization applications in a typical desktop environment (e.g. Matlab, Rstudio) using only a web browser. EnginFrame will retire at the end of 2022 and will be replaced by Open OnDemand (see below)._
+
+### <a href="https://viz.rc.colorado.edu" target="_blank">CURC Open OnDemand</a>
+
+_The CURC Open OnDemand gateway provides a web-browser-based portal to numerous CURC services.  Within Open OnDemand, users can open a terminal, schedule jobs, use Jupyter Notebooks, run the Matlab GUI, and start a 3d-accelerated remote desktop environment on an Nvidia GPU-equipped compute node hosted by CURC. CURC Open OnDemand will replace CURC EnginFrame at the end of 2022._
+	
 
 ### <a href="https://www.colorado.edu/rc/resources/jupyterhub" target="_blank">JupyterHub</a>
 _JupyterHub is a multi-user server for Jupyter (formerly known as IPython) notebooks. It provides a web service that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. CURC hosts a JupyterHub environment that enables researchers to utilize CURC-hosted storage and computing resources._
+	
+
+### <a href="https://curc.readthedocs.io/en/latest/cloud/cumulus.html" target="_blank">CUmulus cloud system</a>
+_CUmulus is an on-premise cloud resource that "looks" a lot like Amazon Web Services. It facilitates projects that don't map easily to HPC, such as running persistent processes or databases._
 
 # GETTING HELP
 
